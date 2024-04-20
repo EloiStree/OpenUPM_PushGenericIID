@@ -1,0 +1,16 @@
+
+{                                                                   
+            "name": "be.eloistree.pushgenericintegerdateEditor",          
+    "references": ["be.eloistree.pushgenericintegerdate"
+],                                                              
+    "optionalUnityReferences": [],                                  
+    "includePlatforms": [                                           
+        "Editor"                                                    
+    ],                                                              
+    "excludePlatforms": [],                                         
+    "allowUnsafeCode": false,                                       
+    "overrideReferences": false,                                    
+    "precompiledReferences": [],                                    
+    "autoReferenced": true,                                         
+    "defineConstraints": []                                         
+}                                                                   

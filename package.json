@@ -1,0 +1,23 @@
+
+{                                                                                
+  "name": "be.eloistree.pushgenericintegerdate",                              
+  "displayName": "Push Generic Integer as Input to play game",                        
+  "version": "0.0.1",                         
+  "unity": "2018.1",                             
+  "unityRelease": "",                             
+  "description": "Demo of integer use as input for game and remote control with IID server.",                         
+  "keywords": ["Script","Tool"],                       
+  "dependencies":{},     
+  "relatedPackages":{},     
+  "samples" : [],     
+  "author" : {
+"name":"",
+"mail":"",
+"url":""},     
+  "repository":{
+"type":"Git",
+"url":"https://github.com/EloiStree/2024_04_07_PushGenericAsIntegerDate.git",
+"footprint":"",
+"revision":""},     
+  "category": "Script"                   
+} 
