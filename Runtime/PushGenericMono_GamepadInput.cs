@@ -106,12 +106,12 @@ public class PushGenericMono_GamepadInput : MonoBehaviour
         
     }
 
-    private float TurnPercent11To099(float percent)
+    private int TurnPercent11To099(float percent)
     {
         if (percent == 0)
             return 0;
         if (Math.Abs(percent) < m_deathZone)
             return 0;
-        return 1 + (((percent + 1f) * 0.5f) * 98f);
+        return Mathf.Clamp((int)Math.Round(1f + (((percent + 1f) * 0.5f) * 98f), 0), 0, 99);
     }
 }
