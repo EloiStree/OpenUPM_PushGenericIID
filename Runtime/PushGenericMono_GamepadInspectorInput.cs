@@ -67,11 +67,17 @@ public class PushGenericMono_GamepadInspectorInput : MonoBehaviour
 
     void Update()
     {
-        int value = m_startId;
+        int value = 0;
         value += (int)(TurnPercent11To099(m_joystickRightVertical));
         value += (int)(TurnPercent11To099(m_joystickRightHorizontal) * 100);
         value += (int)(TurnPercent11To099(m_joystickLeftVertical) * 10000);
         value += (int)(TurnPercent11To099(m_joystickLeftHorizontal) * 1000000);
+
+        value += Math.Abs( m_startId) * 100000000;
+        
+        if (m_startId < 0) {
+            value *= -1;
+        }
 
         m_asIntCurrent = value;
 
