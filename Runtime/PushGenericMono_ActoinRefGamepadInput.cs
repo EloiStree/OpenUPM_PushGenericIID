@@ -20,6 +20,8 @@ public class PushGenericMono_ActoinRefGamepadInput : MonoBehaviour
     [SerializeField]
     public Vector2 m_joystickRightValue;
 
+
+
     private void OnEnable()
     {
         if (m_joystickLeftReference != null)

@@ -23,9 +23,15 @@ public class PushGenericMono_GamepadByteId2020 : MonoBehaviour
     int m_previousSendByteInteger;
 
 
+    public void NextElementId() { NextElementId(1); }
+    public void PreviousElementId() { PreviousElementId(1); }
 
-    public void SetElementId(byte id) { 
-        m_elementId =(byte) Mathf.Clamp(id,-20,20);
+    public void NextElementId(short value) { SetElementId((short)(m_elementId + value)); }
+    public void PreviousElementId(short value) { SetElementId((short)(m_elementId - value)); }
+
+
+    public void SetElementId(short id) { 
+        m_elementId =(short) Mathf.Clamp(id,-20,20);
     }
 
     public void SetLeftRightRotation(float percent) { 
