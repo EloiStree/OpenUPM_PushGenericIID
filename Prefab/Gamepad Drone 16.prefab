@@ -93,7 +93,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0584ba15db8257418e3c98ba3fbe13d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_elementId: -9
+  m_elementId: 0
   m_leftRightRotationPercent: 1
   m_downUpPercent: 1
   m_leftRightPercent: 1
@@ -101,4 +101,4 @@ MonoBehaviour:
   m_onGamepadChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_sendByteInteger: -999999999
+  m_sendByteInteger: -99999999
