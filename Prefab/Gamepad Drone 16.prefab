@@ -1,0 +1,104 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &8495073803214503694
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7701042978768917034}
+  - component: {fileID: 6645232218815067192}
+  - component: {fileID: 3059109278929251336}
+  m_Layer: 0
+  m_Name: Gamepad Drone 16
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7701042978768917034
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8495073803214503694}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 4.428571, y: 4.908764, z: 4.758203}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6645232218815067192
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8495073803214503694}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5cdec77d28f949468003441507645ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_joystickLeft:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3059109278929251336}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  m_joystickRight:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3059109278929251336}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  m_joystickLeftReference: {fileID: 700960245180566586, guid: 0cd9e1ce9d8cd0341a5d39fb73ec6e0d,
+    type: 3}
+  m_joystickRightReference: {fileID: -4113656625682335193, guid: 0cd9e1ce9d8cd0341a5d39fb73ec6e0d,
+    type: 3}
+  m_joystickLeftValue: {x: 0, y: 0}
+  m_joystickRightValue: {x: 0, y: 0}
+--- !u!114 &3059109278929251336
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8495073803214503694}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0584ba15db8257418e3c98ba3fbe13d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_elementId: -9
+  m_leftRightRotationPercent: 1
+  m_downUpPercent: 1
+  m_leftRightPercent: 1
+  m_backwardForwardPercent: 1
+  m_onGamepadChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_sendByteInteger: -999999999
