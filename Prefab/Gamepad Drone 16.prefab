@@ -236,8 +236,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: ConnectToServerTunnelingRsaMono, be.eloistree.iidwstunnelingrsa
-        m_MethodName: PushMessageInteger4BytesLE
+        m_TargetAssemblyTypeName: BytesPushMono_Relay, be.eloistree.mirrordronesoccerstartpack
+        m_MethodName: PushIntegerLittleEndianIn
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
