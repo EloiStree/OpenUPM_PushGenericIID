@@ -442,6 +442,28 @@
                     "action": "JoystickRight",
                     "isComposite": false,
                     "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "a4f8d4eb-8fb2-4fab-b447-e54bd4a93200",
+                    "path": "<XboxOneGamepadAndroid>/leftStick",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "JoystickLeft",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "8f98197f-02c9-4b5c-accd-bd877799f6f0",
+                    "path": "<XboxOneGamepadAndroid>/rightStick",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "JoystickRight",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         }
