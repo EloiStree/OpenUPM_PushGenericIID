@@ -1,7 +1,7 @@
 
 {                                                                   
-            "name": "be.eloistree.pushgenericintegerdateEditor",          
-    "references": ["be.eloistree.pushgenericintegerdate"
+            "name": "be.elab.pushgenericintegerdateEditor",          
+    "references": ["be.elab.pushgenericintegerdate"
 ],                                                              
     "optionalUnityReferences": [],                                  
     "includePlatforms": [                                           
