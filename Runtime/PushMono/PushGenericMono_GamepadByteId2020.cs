@@ -9,13 +9,13 @@ public class PushGenericMono_GamepadByteId2020 : MonoBehaviour
     [Range(-20,20)]
     public short m_elementId;
     [Range(-1f,1f)]
-    public float m_leftRightRotationPercent;
+    public float m_joystickLeftHorizontal;
     [Range(-1f, 1f)]
-    public float m_downUpPercent;
+    public float m_joystickLeftVertical;
     [Range(-1f, 1f)]
-    public float m_leftRightPercent;
+    public float m_joystickRightHorizontal;
     [Range(-1f, 1f)]
-    public float m_backwardForwardPercent;
+    public float m_joystickRightVertical;
 
 
     public UnityEvent<int> m_onGamepadChanged;
@@ -35,34 +35,34 @@ public class PushGenericMono_GamepadByteId2020 : MonoBehaviour
     }
 
     public void SetLeftRightRotation(float percent) { 
-        m_leftRightRotationPercent = Mathf.Clamp(percent, -1f, 1f);
+        m_joystickLeftHorizontal = Mathf.Clamp(percent, -1f, 1f);
     }
     public void SetDownUp(float percent) { 
-        m_downUpPercent = Mathf.Clamp(percent, -1f, 1f);
+        m_joystickLeftVertical = Mathf.Clamp(percent, -1f, 1f);
     }
     public void SetLeftRight(float percent) { 
-        m_leftRightPercent = Mathf.Clamp(percent, -1f, 1f);
+        m_joystickRightHorizontal = Mathf.Clamp(percent, -1f, 1f);
     }
     public void SetBackwardForward(float percent) { 
-        m_backwardForwardPercent = Mathf.Clamp(percent, -1f, 1f);
+        m_joystickRightVertical = Mathf.Clamp(percent, -1f, 1f);
     }
 
     public void SetLeftJoystick(Vector2 joystick)
     {
-        SetGamepadValues(joystick.x, joystick.y , m_leftRightPercent, m_backwardForwardPercent);
+        SetGamepadValues(joystick.x, joystick.y , m_joystickRightHorizontal, m_joystickRightVertical);
     }
     public void SetRightJoystick(Vector2 joystick)
     {
-        SetGamepadValues(m_leftRightRotationPercent, m_downUpPercent, joystick.x, joystick.y);
+        SetGamepadValues(m_joystickLeftHorizontal, m_joystickLeftVertical, joystick.x, joystick.y);
     }
 
     public void SetGamepadValues(float leftRightRotationPercent, float downUpPercent, float leftRightPercent, float backwardForwardPercent)
     {
 
-        m_leftRightRotationPercent = Mathf.Clamp(leftRightRotationPercent, -1f, 1f);
-        m_downUpPercent = Mathf.Clamp(downUpPercent, -1f, 1f);
-        m_leftRightPercent = Mathf.Clamp(leftRightPercent, -1f, 1f);
-        m_backwardForwardPercent = Mathf.Clamp(backwardForwardPercent, -1f, 1f);
+        m_joystickLeftHorizontal = Mathf.Clamp(leftRightRotationPercent, -1f, 1f);
+        m_joystickLeftVertical = Mathf.Clamp(downUpPercent, -1f, 1f);
+        m_joystickRightHorizontal = Mathf.Clamp(leftRightPercent, -1f, 1f);
+        m_joystickRightVertical = Mathf.Clamp(backwardForwardPercent, -1f, 1f);
 
      }
 
@@ -79,10 +79,10 @@ public class PushGenericMono_GamepadByteId2020 : MonoBehaviour
     private void RefreshAndPushIfChanged()
     {
         int v = 0;
-        v += ParsePercent11To099(m_backwardForwardPercent);
-        v += ParsePercent11To099(m_leftRightPercent) * 100;
-        v += ParsePercent11To099(m_downUpPercent) * 10000;
-        v += ParsePercent11To099(m_leftRightRotationPercent) * 1000000;
+        v += ParsePercent11To099(m_joystickRightVertical);
+        v += ParsePercent11To099(m_joystickRightHorizontal) * 100;
+        v += ParsePercent11To099(m_joystickLeftVertical) * 10000;
+        v += ParsePercent11To099(m_joystickLeftHorizontal) * 1000000;
 
         if (m_elementId > 0) { 
             v += m_elementId * 100000000;
