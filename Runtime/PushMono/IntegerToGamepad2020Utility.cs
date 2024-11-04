@@ -61,4 +61,52 @@ public class IntegerToGamepad2020Utility
     {
         first = value / 100000000;
     }
+
+    public static void GetIntegerAs32BitsLeftRight(int value, out bool[] bits32)
+    {
+        // from right to left
+        bits32 = new bool[32];
+        for (int i = 0; i < 32; i++)
+        {
+            bits32[i] = (value & (1 << i)) != 0;
+        }
+    }
+    public static void GetIntegerAs32BitsRightLeft(int value, out bool[] bits32)
+    {
+        GetIntegerAs32BitsLeftRight(value, out bits32);
+        Array.Reverse(bits32);
+    }
+
+
+    public static void ParseGamepadExtraByteId2020FromInteger(int value, out GamepadId2020Extra pad)
+    {
+        int elementId = value / 100000000;
+        GetIntegerAs32BitsRightLeft(value, out bool[] bits32);
+        pad = new GamepadId2020Extra();
+        pad.m_id2020 = (sbyte) elementId;
+        pad.m_00_buttonUp = bits32[0];
+        pad.m_01_buttonDown = bits32[1];
+        pad.m_02_buttonLeft = bits32[2];
+        pad.m_03_buttonRight = bits32[3];
+        pad.m_04_buttonShouldLeft = bits32[4];
+        pad.m_05_buttonShouldRight = bits32[5];
+        pad.m_06_buttonJoystickLeft = bits32[6];
+        pad.m_07_buttonJoystickRight = bits32[7];
+        pad.m_08_arrowUp = bits32[8];
+        pad.m_09_arrowDown = bits32[9];
+        pad.m_10_arrowLeft = bits32[10];
+        pad.m_11_arrowRight = bits32[11];
+        pad.m_12_menuLeft = bits32[12];
+        pad.m_13_menuRight = bits32[13];
+        pad.m_14_triggerLeft = bits32[14];
+        pad.m_15_triggerRight = bits32[15];
+        pad.m_16_triggerRightLow = bits32[16];
+        pad.m_17_triggerRightMiddle = bits32[17];
+        pad.m_18_triggerRightFull  = bits32[18];
+        pad.m_19_triggerLeftLow  = bits32[19];
+        pad.m_20_triggerLeftMiddle = bits32[20];
+        pad.m_21_triggerLeftFull = bits32[21];
+        pad.m_22_backPressionLeft  = bits32[22];
+        pad.m_23_backPressionRight = bits32[23];
+    }
 }
