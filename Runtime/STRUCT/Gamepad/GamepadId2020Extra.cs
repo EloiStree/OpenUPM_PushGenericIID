@@ -26,7 +26,7 @@ public struct GamepadId2020Extra {
     public bool m_19_triggerLeftLow;
     public bool m_20_triggerLeftMiddle;
     public bool m_21_triggerLeftFull;
-    public bool m_22_backPressionLeft;
-    public bool m_23_backPressionRight;
+    public bool m_22_menuCenter;
+    public bool m_23_isConnected;
 
 }

@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 
 [System.Serializable]
-public struct GamepadByteId2020Percent11
+public struct STRUCT_GamepadByteId2020Percent11
 {
     [Range(-20,20)]
     public short m_id2020;

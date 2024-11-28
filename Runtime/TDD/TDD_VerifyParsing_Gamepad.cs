@@ -2,9 +2,9 @@
 
 public class TDD_VerifyParsing_Gamepad :MonoBehaviour{
 
-    public GamepadByteId2020Percent11 m_gamepadInValue;
+    public STRUCT_GamepadByteId2020Percent11 m_gamepadInValue;
     public int m_integerCommand;
-    public GamepadByteId2020Percent11 m_gamepadOutInValue;
+    public STRUCT_GamepadByteId2020Percent11 m_gamepadOutInValue;
 
     private void OnValidate()
     {

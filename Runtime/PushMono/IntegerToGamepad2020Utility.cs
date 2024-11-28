@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class IntegerToGamepad2020Utility
 {
-    public static void ParseGamepadByteId2020FromInteger(int value, out GamepadByteId2020Percent11 gamepad)
+    public static void ParseGamepadByteId2020FromInteger(int value, out STRUCT_GamepadByteId2020Percent11 gamepad)
     {
         ParseGamepadByteId2020FromInteger(value, out gamepad.m_id2020, out gamepad.m_joystickLeftHorizontal, out gamepad.m_joystickLeftVertical, out gamepad.m_joystickRightHorizontal, out gamepad.m_joystickRightVertical);
     }
@@ -20,7 +20,7 @@ public class IntegerToGamepad2020Utility
         joystickRightVertical = ParsePercent99To11(value % 100);
     }
 
-    public static void ParseGamepadByteId2020ToInteger(out int value, GamepadByteId2020Percent11 gamepad)
+    public static void ParseGamepadByteId2020ToInteger(out int value, STRUCT_GamepadByteId2020Percent11 gamepad)
     {
         ParseGamepadByteId2020ToInteger(out value, gamepad.m_id2020, gamepad.m_joystickLeftHorizontal, gamepad.m_joystickLeftVertical, gamepad.m_joystickRightHorizontal, gamepad.m_joystickRightVertical);
     }
@@ -106,7 +106,7 @@ public class IntegerToGamepad2020Utility
         pad.m_19_triggerLeftLow  = bits32[19];
         pad.m_20_triggerLeftMiddle = bits32[20];
         pad.m_21_triggerLeftFull = bits32[21];
-        pad.m_22_backPressionLeft  = bits32[22];
-        pad.m_23_backPressionRight = bits32[23];
+        pad.m_22_menuCenter  = bits32[22];
+        pad.m_23_isConnected = bits32[23];
     }
 }
