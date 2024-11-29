@@ -75,8 +75,8 @@ public class IntegerToMousePosition2020Utility {
             elementId = -20;
 
         value = 0;
-        value +=(ushort) (leftRightPercent*9999f * 10000);
-        value += (ushort)(downTopPercent *9999f);
+        value += (int)(((int)(leftRightPercent*9999f)) * 10000);
+        value += (int)(downTopPercent *9999f);
 
         if (elementId > 0)
         {
