@@ -14,6 +14,13 @@ public class QuestGamepads2020Mono : MonoBehaviour ,I_QuestGamepadSetGet
     private int m_axisValuePrevious;
 
 
+    public void PushInInteger(int possibleIntegerCommand) {
+
+       IntegerToOculusGamepads2020Utility.SetFromInteger(possibleIntegerCommand, ref m_questGamepads2020.m_gamepadAsRawValue);
+       RefreshHumanValueFromRawInteger();
+
+    }
+
     [ContextMenu("Set With Full Random")]
     public void SetWithFullRandom() { 
     
@@ -103,8 +110,26 @@ public class QuestGamepads2020Mono : MonoBehaviour ,I_QuestGamepadSetGet
     }
 
     [ContextMenu("RefreshRawIntegerToHumanValue")]
-    public void RefreshHumanValueToRawInteger() { 
+    public void RefreshHumanValueToRawInteger()
+    {
         m_questGamepads2020.RefreshHumanValueToRawInteger();
+        int currentButtonValue = m_questGamepads2020.m_gamepadAsRawValue.m_buttonsStateWithTag;
+        int currentAxisValue = m_questGamepads2020.m_gamepadAsRawValue.m_axisStateWithTag;
+        if (m_buttonValuePrevious != currentButtonValue)
+        {
+            m_buttonValuePrevious = currentButtonValue;
+            m_onIntegerButtonChanged.Invoke(currentButtonValue);
+        }
+        if (m_axisValuePrevious != currentAxisValue)
+        {
+            m_axisValuePrevious = currentAxisValue;
+            m_onIntegerAxisChanged.Invoke(currentAxisValue);
+        }
+    }
+    [ContextMenu("RefreshRawIntegerToHumanValue")]
+    public void RefreshHumanValueFromRawInteger()
+    {
+        m_questGamepads2020.RefreshHumanValueFromRawInteger();
         int currentButtonValue = m_questGamepads2020.m_gamepadAsRawValue.m_buttonsStateWithTag;
         int currentAxisValue = m_questGamepads2020.m_gamepadAsRawValue.m_axisStateWithTag;
         if (m_buttonValuePrevious != currentButtonValue)

@@ -137,34 +137,62 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_target: {fileID: 649925877791099735}
-  m_joystickLeftHorizontal: {fileID: 0}
-  m_joystickLeftVertical: {fileID: 0}
-  m_joystickRightHorizontal: {fileID: 0}
-  m_joystickRightVertical: {fileID: 0}
-  m_triggerLeft: {fileID: 0}
-  m_triggerRight: {fileID: 0}
-  m_gripLeft: {fileID: 0}
-  m_gripRight: {fileID: 0}
-  m_buttonLeftTop: {fileID: 0}
-  m_buttonRightTop: {fileID: 0}
-  m_buttonLeftDown: {fileID: 0}
-  m_buttonRightDown: {fileID: 0}
-  m_buttonLeftJoystick: {fileID: 0}
-  m_buttonRightJoystick: {fileID: 0}
-  m_buttonLeftThumbRest: {fileID: 0}
-  m_buttonRightThumbRest: {fileID: 0}
-  m_menuLeft: {fileID: 0}
-  m_menuRight: {fileID: 0}
-  m_touchLeftTop: {fileID: 0}
-  m_touchRightTop: {fileID: 0}
-  m_touchLeftDown: {fileID: 0}
-  m_touchRightDown: {fileID: 0}
-  m_touchLeftJoystick: {fileID: 0}
-  m_touchRightJoystick: {fileID: 0}
-  m_touchLeftTrigger: {fileID: 0}
-  m_touchRightTrigger: {fileID: 0}
-  m_isLeftTracked: {fileID: 0}
-  m_isRightTracked: {fileID: 0}
+  m_joystickLeftHorizontal: {fileID: -13886211994379101, guid: c778287b3e8d6b94082b3a102ab59b79,
+    type: 3}
+  m_joystickLeftVertical: {fileID: -6922427149686765971, guid: c778287b3e8d6b94082b3a102ab59b79,
+    type: 3}
+  m_joystickRightHorizontal: {fileID: -6621110972660842986, guid: c778287b3e8d6b94082b3a102ab59b79,
+    type: 3}
+  m_joystickRightVertical: {fileID: 8263939473297951559, guid: c778287b3e8d6b94082b3a102ab59b79,
+    type: 3}
+  m_triggerLeft: {fileID: 7510476089621944782, guid: c778287b3e8d6b94082b3a102ab59b79,
+    type: 3}
+  m_triggerRight: {fileID: -627413348381349413, guid: c778287b3e8d6b94082b3a102ab59b79,
+    type: 3}
+  m_gripLeft: {fileID: 896309722302623183, guid: c778287b3e8d6b94082b3a102ab59b79,
+    type: 3}
+  m_gripRight: {fileID: 2474833626519400434, guid: c778287b3e8d6b94082b3a102ab59b79,
+    type: 3}
+  m_buttonLeftTop: {fileID: -4378987572758322962, guid: c778287b3e8d6b94082b3a102ab59b79,
+    type: 3}
+  m_buttonRightTop: {fileID: 4057977829795852256, guid: c778287b3e8d6b94082b3a102ab59b79,
+    type: 3}
+  m_buttonLeftDown: {fileID: 6113497560301956541, guid: c778287b3e8d6b94082b3a102ab59b79,
+    type: 3}
+  m_buttonRightDown: {fileID: 7778557148123722453, guid: c778287b3e8d6b94082b3a102ab59b79,
+    type: 3}
+  m_buttonLeftJoystick: {fileID: -2866718823842850331, guid: c778287b3e8d6b94082b3a102ab59b79,
+    type: 3}
+  m_buttonRightJoystick: {fileID: -4369230996705066597, guid: c778287b3e8d6b94082b3a102ab59b79,
+    type: 3}
+  m_buttonLeftThumbRest: {fileID: -204027982055155982, guid: c778287b3e8d6b94082b3a102ab59b79,
+    type: 3}
+  m_buttonRightThumbRest: {fileID: 7016169762900647939, guid: c778287b3e8d6b94082b3a102ab59b79,
+    type: 3}
+  m_menuLeft: {fileID: 8392471076060936865, guid: c778287b3e8d6b94082b3a102ab59b79,
+    type: 3}
+  m_menuRight: {fileID: 298374178358479582, guid: c778287b3e8d6b94082b3a102ab59b79,
+    type: 3}
+  m_touchLeftTop: {fileID: 7539695374823518051, guid: c778287b3e8d6b94082b3a102ab59b79,
+    type: 3}
+  m_touchRightTop: {fileID: 6457945149086394849, guid: c778287b3e8d6b94082b3a102ab59b79,
+    type: 3}
+  m_touchLeftDown: {fileID: 7913990590096441859, guid: c778287b3e8d6b94082b3a102ab59b79,
+    type: 3}
+  m_touchRightDown: {fileID: 8485143304048181135, guid: c778287b3e8d6b94082b3a102ab59b79,
+    type: 3}
+  m_touchLeftJoystick: {fileID: -4714102778689823941, guid: c778287b3e8d6b94082b3a102ab59b79,
+    type: 3}
+  m_touchRightJoystick: {fileID: 5559102343133731982, guid: c778287b3e8d6b94082b3a102ab59b79,
+    type: 3}
+  m_touchLeftTrigger: {fileID: 1425329093112587292, guid: c778287b3e8d6b94082b3a102ab59b79,
+    type: 3}
+  m_touchRightTrigger: {fileID: -3927219105450667779, guid: c778287b3e8d6b94082b3a102ab59b79,
+    type: 3}
+  m_isLeftTracked: {fileID: 9117764979986538580, guid: c778287b3e8d6b94082b3a102ab59b79,
+    type: 3}
+  m_isRightTracked: {fileID: 33308923716556540, guid: c778287b3e8d6b94082b3a102ab59b79,
+    type: 3}
   m_triggerThresholdToButton: 0.05
   m_gripThresholdToButton: 0.1
 --- !u!1 &5582940671754604838

@@ -114,6 +114,22 @@ public class IntegerToOculusGamepads2020Utility
         gamepadRawData.GetBitState(22, out gamepadData.m_brl22_isGripLeftPressing);
         gamepadRawData.GetBitState(23, out gamepadData.m_brl23_isGripRightPressing);
     }
+
+    public static void SetFromInteger( int possibleIntegerCommand, ref STRUCT_QuestGamepadsRawInt2020 gamepadRawData)
+    {
+        int tag = possibleIntegerCommand / 100000000;
+       // Debug.Log("tag " + tag);
+        if (tag == 10)
+        {
+            gamepadRawData.m_buttonsState = (possibleIntegerCommand%100000000);
+            gamepadRawData.m_buttonsStateWithTag = gamepadRawData.m_buttonsState + 1000000000;
+        }
+        else if (tag == 11)
+        {
+            gamepadRawData.m_axisState = (possibleIntegerCommand % 100000000);
+            gamepadRawData.m_axisStateWithTag = gamepadRawData.m_axisState + 1100000000;
+        }
+    }
 }
 
 [System.Serializable]
@@ -195,6 +211,10 @@ public class QuestGamepads2020 : I_QuestGamepadSetGet {
     public void RefreshHumanValueToRawInteger()
     {
         IntegerToOculusGamepads2020Utility.Parse(ref m_gamepadHumanValue, ref m_gamepadAsRawValue);
+    }
+    public void RefreshHumanValueFromRawInteger()
+    {
+        IntegerToOculusGamepads2020Utility.Parse(ref m_gamepadAsRawValue, ref m_gamepadHumanValue);
     }
 
     public void SetDownLeftTouch(bool value) { 
@@ -414,6 +434,7 @@ public class QuestGamepads2020 : I_QuestGamepadSetGet {
         RefreshHumanValueToRawInteger();
     }
 
+   
 }
 
 

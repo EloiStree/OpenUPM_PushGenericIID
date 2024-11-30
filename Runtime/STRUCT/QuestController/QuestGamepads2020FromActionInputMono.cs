@@ -489,22 +489,22 @@ public class QuestGamepads2020FromActionInputMono : MonoBehaviour {
 
     private void OnJoystickRightVertical(InputAction.CallbackContext context)
     {
-        m_target.SetLeftHorizontal(context.ReadValue<float>());
+        m_target.SetRightVertical(context.ReadValue<float>());
     }
 
     private void OnJoystickRightHorizontal(InputAction.CallbackContext context)
     {
-        m_target.SetLeftVertical(context.ReadValue<float>());
+        m_target.SetRightHorizontal(context.ReadValue<float>());
     }
 
     private void OnJoystickLeftVertical(InputAction.CallbackContext context)
     {
-        m_target.SetRightHorizontal(context.ReadValue<float>());
+        m_target.SetLeftVertical(context.ReadValue<float>());
     }
 
     private void OnJoystickLeftHorizontal(InputAction.CallbackContext context)
     {
-        m_target.SetRightVertical(context.ReadValue<float>());
+        m_target.SetLeftHorizontal(context.ReadValue<float>());
     }
 
 
