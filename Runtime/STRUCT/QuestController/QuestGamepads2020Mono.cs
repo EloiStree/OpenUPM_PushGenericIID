@@ -113,6 +113,11 @@ public class QuestGamepads2020Mono : MonoBehaviour ,I_QuestGamepadSetGet
     public void RefreshHumanValueToRawInteger()
     {
         m_questGamepads2020.RefreshHumanValueToRawInteger();
+        CheckForAnyChange();
+    }
+
+    private void CheckForAnyChange()
+    {
         int currentButtonValue = m_questGamepads2020.m_gamepadAsRawValue.m_buttonsStateWithTag;
         int currentAxisValue = m_questGamepads2020.m_gamepadAsRawValue.m_axisStateWithTag;
         if (m_buttonValuePrevious != currentButtonValue)
@@ -126,22 +131,12 @@ public class QuestGamepads2020Mono : MonoBehaviour ,I_QuestGamepadSetGet
             m_onIntegerAxisChanged.Invoke(currentAxisValue);
         }
     }
+
     [ContextMenu("RefreshRawIntegerToHumanValue")]
     public void RefreshHumanValueFromRawInteger()
     {
         m_questGamepads2020.RefreshHumanValueFromRawInteger();
-        int currentButtonValue = m_questGamepads2020.m_gamepadAsRawValue.m_buttonsStateWithTag;
-        int currentAxisValue = m_questGamepads2020.m_gamepadAsRawValue.m_axisStateWithTag;
-        if (m_buttonValuePrevious != currentButtonValue)
-        {
-            m_buttonValuePrevious = currentButtonValue;
-            m_onIntegerButtonChanged.Invoke(currentButtonValue);
-        }
-        if (m_axisValuePrevious != currentAxisValue)
-        {
-            m_axisValuePrevious = currentAxisValue;
-            m_onIntegerAxisChanged.Invoke(currentAxisValue);
-        }
+        CheckForAnyChange();
     }
 
     public bool GetDownLeft()
@@ -307,160 +302,192 @@ public class QuestGamepads2020Mono : MonoBehaviour ,I_QuestGamepadSetGet
     public void SetDownLeft(bool value)
     {
         ((I_QuestGamepadsSet)m_questGamepads2020).SetDownLeft(value);
+        CheckForAnyChange();
     }
 
     public void SetDownLeftTouch(bool value)
     {
         ((I_QuestGamepadsSet)m_questGamepads2020).SetDownLeftTouch(value);
+        CheckForAnyChange();
     }
 
     public void SetDownRight(bool value)
     {
         ((I_QuestGamepadsSet)m_questGamepads2020).SetDownRight(value);
+        CheckForAnyChange();
     }
 
     public void SetDownRightTouch(bool value)
     {
         ((I_QuestGamepadsSet)m_questGamepads2020).SetDownRightTouch(value);
+        CheckForAnyChange();
     }
 
     public void SetGripLeft(float value)
     {
         ((I_QuestGamepadsSet)m_questGamepads2020).SetGripLeft(value);
+        CheckForAnyChange();
     }
 
     public void SetGripRight(float value)
     {
         ((I_QuestGamepadsSet)m_questGamepads2020).SetGripRight(value);
+        CheckForAnyChange();
     }
 
     public void SetIsGripLeftPressing(bool value)
     {
         ((I_QuestGamepadsSet)m_questGamepads2020).SetIsGripLeftPressing(value);
+        CheckForAnyChange();
     }
 
     public void SetIsGripRightPressing(bool value)
     {
         ((I_QuestGamepadsSet)m_questGamepads2020).SetIsGripRightPressing(value);
+        CheckForAnyChange();
     }
 
     public void SetIsLeftTracked(bool value)
     {
         ((I_QuestGamepadsSet)m_questGamepads2020).SetIsLeftTracked(value);
+        CheckForAnyChange();
     }
 
     public void SetIsRightTracked(bool value)
     {
         ((I_QuestGamepadsSet)m_questGamepads2020).SetIsRightTracked(value);
+        CheckForAnyChange();
     }
 
     public void SetIsTriggerLeftPressing(bool value)
     {
         ((I_QuestGamepadsSet)m_questGamepads2020).SetIsTriggerLeftPressing(value);
+        CheckForAnyChange();
     }
 
     public void SetIsTriggerRightPressing(bool value)
     {
         ((I_QuestGamepadsSet)m_questGamepads2020).SetIsTriggerRightPressing(value);
+        CheckForAnyChange();
     }
 
     public void SetJoystickLeft(bool value)
     {
         ((I_QuestGamepadsSet)m_questGamepads2020).SetJoystickLeft(value);
+        CheckForAnyChange();
     }
 
     public void SetJoystickLeftTouch(bool value)
     {
         ((I_QuestGamepadsSet)m_questGamepads2020).SetJoystickLeftTouch(value);
+        CheckForAnyChange();
     }
 
     public void SetJoystickRight(bool value)
     {
         ((I_QuestGamepadsSet)m_questGamepads2020).SetJoystickRight(value);
+        CheckForAnyChange();
     }
 
     public void SetJoystickRightTouch(bool value)
     {
         ((I_QuestGamepadsSet)m_questGamepads2020).SetJoystickRightTouch(value);
+        CheckForAnyChange();
     }
 
     public void SetLeftHorizontal(float value)
     {
         ((I_QuestGamepadsSet)m_questGamepads2020).SetLeftHorizontal(value);
+        CheckForAnyChange();
     }
 
     public void SetLeftVertical(float value)
     {
         ((I_QuestGamepadsSet)m_questGamepads2020).SetLeftVertical(value);
+        CheckForAnyChange();
     }
 
     public void SetMenuLeft(bool value)
     {
         ((I_QuestGamepadsSet)m_questGamepads2020).SetMenuLeft(value);
+        CheckForAnyChange();
     }
 
     public void SetMenuRight(bool value)
     {
         ((I_QuestGamepadsSet)m_questGamepads2020).SetMenuRight(value);
+        CheckForAnyChange();
     }
 
     public void SetRightHorizontal(float value)
     {
         ((I_QuestGamepadsSet)m_questGamepads2020).SetRightHorizontal(value);
+        CheckForAnyChange();
     }
 
     public void SetRightVertical(float value)
     {
         ((I_QuestGamepadsSet)m_questGamepads2020).SetRightVertical(value);
+        CheckForAnyChange();
     }
 
     public void SetThumbRestLeft(bool value)
     {
         ((I_QuestGamepadsSet)m_questGamepads2020).SetThumbRestLeft(value);
+        CheckForAnyChange();
     }
 
     public void SetThumbRestRight(bool value)
     {
         ((I_QuestGamepadsSet)m_questGamepads2020).SetThumbRestRight(value);
+        CheckForAnyChange();
     }
 
     public void SetTopLeft(bool value)
     {
         ((I_QuestGamepadsSet)m_questGamepads2020).SetTopLeft(value);
+        CheckForAnyChange();
     }
 
     public void SetTopLeftTouch(bool value)
     {
         ((I_QuestGamepadsSet)m_questGamepads2020).SetTopLeftTouch(value);
+        CheckForAnyChange();
     }
 
     public void SetTopRight(bool value)
     {
         ((I_QuestGamepadsSet)m_questGamepads2020).SetTopRight(value);
+        CheckForAnyChange();
     }
 
     public void SetTopRightTouch(bool value)
     {
         ((I_QuestGamepadsSet)m_questGamepads2020).SetTopRightTouch(value);
+        CheckForAnyChange();
     }
 
     public void SetTriggerLeft(float value)
     {
         ((I_QuestGamepadsSet)m_questGamepads2020).SetTriggerLeft(value);
+        CheckForAnyChange();
     }
 
     public void SetTriggerLeftTouch(bool value)
     {
         ((I_QuestGamepadsSet)m_questGamepads2020).SetTriggerLeftTouch(value);
+        CheckForAnyChange();
     }
 
     public void SetTriggerRight(float value)
     {
         ((I_QuestGamepadsSet)m_questGamepads2020).SetTriggerRight(value);
+        CheckForAnyChange();
     }
 
     public void SetTriggerRightTouch(bool value)
     {
         ((I_QuestGamepadsSet)m_questGamepads2020).SetTriggerRightTouch(value);
+        CheckForAnyChange();
     }
 }
