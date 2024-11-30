@@ -45,8 +45,8 @@ public class QuestGamepads2020FromActionInputMono : MonoBehaviour {
     public InputActionReference m_isRightTracked;
 
 
-    public float m_triggerthresholdForButton = 0.2f;
-    public float m_gripThresholdForButton = 0.2f;
+    public float m_triggerThresholdToButton = 0.05f;
+    public float m_gripThresholdToButton = 0.1f;
 
 
     public void EnableAllActionReference() { 
@@ -466,25 +466,25 @@ public class QuestGamepads2020FromActionInputMono : MonoBehaviour {
     private void OnGripRightFloatValue(InputAction.CallbackContext context)
     {
         m_target.SetGripRight(context.ReadValue<float>() );
-        m_target.SetIsGripRightPressing(context.ReadValue<float>() > m_gripThresholdForButton);
+        m_target.SetIsGripRightPressing(context.ReadValue<float>() > m_gripThresholdToButton);
     }
 
     private void OnGripLeftFloatValue(InputAction.CallbackContext context)
     {
         m_target.SetGripLeft(context.ReadValue<float>());
-        m_target.SetIsGripLeftPressing(context.ReadValue<float>() > m_gripThresholdForButton);
+        m_target.SetIsGripLeftPressing(context.ReadValue<float>() > m_gripThresholdToButton);
     }
 
     private void OnTriggerRightFloatValue(InputAction.CallbackContext context)
     {
         m_target.SetTriggerRight(context.ReadValue<float>());
-        m_target.SetIsTriggerRightPressing(context.ReadValue<float>() > m_triggerthresholdForButton);
+        m_target.SetIsTriggerRightPressing(context.ReadValue<float>() > m_triggerThresholdToButton);
     }
 
     private void OnTriggerLeftFloatValue(InputAction.CallbackContext context)
     {
         m_target.SetTriggerLeft(context.ReadValue<float>());
-        m_target.SetIsTriggerLeftPressing(context.ReadValue<float>() > m_triggerthresholdForButton);
+        m_target.SetIsTriggerLeftPressing(context.ReadValue<float>() > m_triggerThresholdToButton);
     }
 
     private void OnJoystickRightVertical(InputAction.CallbackContext context)

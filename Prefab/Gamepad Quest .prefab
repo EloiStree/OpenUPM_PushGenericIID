@@ -50,17 +50,17 @@ MonoBehaviour:
     m_gamepadAsRawValue:
       m_buttonsState: 0
       m_buttonsStateWithTag: 1000000000
-      m_axisState: 56653322
-      m_axisStateWithTag: 1156653322
+      m_axisState: 55551111
+      m_axisStateWithTag: 1155551111
     m_gamepadHumanValue:
-      m_lr0_leftHorizontal11: -0.077
-      m_lr1_leftVertical11: 0.275
-      m_lr2_rightHorizontal11: 0.194
-      m_lr3_rightVertical11: 0.07
-      m_lr4_triggerLeft01: 0.264
-      m_lr5_triggerRight01: 0.19
-      m_lr6_gripLeft01: 0.136
-      m_lr7_gripRight01: 0.143
+      m_lr0_leftHorizontal11: 0
+      m_lr1_leftVertical11: 0
+      m_lr2_rightHorizontal11: 0
+      m_lr3_rightVertical11: 0
+      m_lr4_triggerLeft01: 0
+      m_lr5_triggerRight01: 0
+      m_lr6_gripLeft01: 0
+      m_lr7_gripRight01: 0
       m_brl0_topLeft: 0
       m_brl1_topRight: 0
       m_brl2_downLeft: 0
@@ -85,7 +85,13 @@ MonoBehaviour:
       m_brl21_isTriggerRightPressing: 0
       m_brl22_isGripLeftPressing: 0
       m_brl23_isGripRightPressing: 0
-  m_useOnValidate: 1
+  m_onIntegerButtonChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_onIntegerAxisChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_useOnValidate: 0
 --- !u!1 &5098408831742714033
 GameObject:
   m_ObjectHideFlags: 0
@@ -159,8 +165,8 @@ MonoBehaviour:
   m_touchRightTrigger: {fileID: 0}
   m_isLeftTracked: {fileID: 0}
   m_isRightTracked: {fileID: 0}
-  m_triggerthresholdForButton: 0.2
-  m_gripThresholdForButton: 0.2
+  m_triggerThresholdToButton: 0.05
+  m_gripThresholdToButton: 0.1
 --- !u!1 &5582940671754604838
 GameObject:
   m_ObjectHideFlags: 0

@@ -7,10 +7,92 @@ public class QuestGamepads2020Mono : MonoBehaviour ,I_QuestGamepadSetGet
 {
 
     public QuestGamepads2020 m_questGamepads2020;
-    public UnityEvent<int> m_onIntegerChanged;
+    public UnityEvent<int> m_onIntegerButtonChanged;
+    public UnityEvent<int> m_onIntegerAxisChanged;
     public bool m_useOnValidate = true;
     private int m_buttonValuePrevious;
     private int m_axisValuePrevious;
+
+
+    [ContextMenu("Set With Full Random")]
+    public void SetWithFullRandom() { 
+    
+        SetWithRandomJoystick();
+        SetRandomButton();
+    }
+
+    [ContextMenu("Set To Zero State")]
+    public void SetToZeroState()
+    {
+        
+        SetLeftHorizontal(0);
+        SetLeftVertical(0);
+        SetRightHorizontal(0);
+        SetRightVertical(0);
+        SetTriggerLeft(0);
+        SetTriggerRight(0);
+        SetGripLeft(0);
+        SetGripRight(0);
+        SetTopLeft(false);
+        SetTopRight(false);
+        SetDownLeft(false);
+        SetDownRight(false);
+        SetMenuLeft(false);
+        SetMenuRight(false);
+        SetJoystickLeft(false);
+        SetJoystickRight(false);
+        SetThumbRestLeft(false);
+        SetThumbRestRight(false);
+        SetTriggerLeftTouch(false);
+        SetTriggerRightTouch(false);
+        SetTopLeftTouch(false);
+        SetTopRightTouch(false);
+        SetDownLeftTouch(false);
+        SetDownRightTouch(false);
+        SetJoystickLeftTouch(false);
+        SetJoystickRightTouch(false);
+        RefreshHumanValueToRawInteger();
+    
+    }
+
+    [ContextMenu("Set With Random Joystick")]
+    public void SetWithRandomJoystick() { 
+    
+        
+        SetLeftHorizontal(UnityEngine.Random.Range(-1f, 1f));
+        SetLeftVertical(UnityEngine.Random.Range(-1f, 1f));
+        SetRightHorizontal(UnityEngine.Random.Range(-1f, 1f));
+        SetRightVertical(UnityEngine.Random.Range(-1f, 1f));
+        SetTriggerLeft(UnityEngine.Random.Range(0f, 1f));
+        SetTriggerRight(UnityEngine.Random.Range(0f, 1f));
+        SetGripLeft(UnityEngine.Random.Range(0f, 1f));
+        SetGripRight(UnityEngine.Random.Range(0f, 1f));
+        RefreshHumanValueToRawInteger();
+    }
+
+    [ContextMenu("Set Random Button")]
+    public void SetRandomButton() { 
+    
+        SetTopLeft(UnityEngine.Random.value > 0.5f);
+        SetTopRight(UnityEngine.Random.value > 0.5f);
+        SetDownLeft(UnityEngine.Random.value > 0.5f);
+        SetDownRight(UnityEngine.Random.value > 0.5f);
+        SetMenuLeft(UnityEngine.Random.value > 0.5f);
+        SetMenuRight(UnityEngine.Random.value > 0.5f);
+        SetJoystickLeft(UnityEngine.Random.value > 0.5f);
+        SetJoystickRight(UnityEngine.Random.value > 0.5f);
+        SetThumbRestLeft(UnityEngine.Random.value > 0.5f);
+        SetThumbRestRight(UnityEngine.Random.value > 0.5f);
+        SetTriggerLeftTouch(UnityEngine.Random.value > 0.5f);
+        SetTriggerRightTouch(UnityEngine.Random.value > 0.5f);
+        SetTopLeftTouch(UnityEngine.Random.value > 0.5f);
+        SetTopRightTouch(UnityEngine.Random.value > 0.5f);
+        SetDownLeftTouch(UnityEngine.Random.value > 0.5f);
+        SetDownRightTouch(UnityEngine.Random.value > 0.5f);
+        SetJoystickLeftTouch(UnityEngine.Random.value > 0.5f);
+        SetJoystickRightTouch(UnityEngine.Random.value > 0.5f);
+        RefreshHumanValueToRawInteger();
+    }
 
     private void OnValidate()
     {
@@ -28,12 +110,12 @@ public class QuestGamepads2020Mono : MonoBehaviour ,I_QuestGamepadSetGet
         if (m_buttonValuePrevious != currentButtonValue)
         {
             m_buttonValuePrevious = currentButtonValue;
-            m_onIntegerChanged.Invoke(currentButtonValue);
+            m_onIntegerButtonChanged.Invoke(currentButtonValue);
         }
         if (m_axisValuePrevious != currentAxisValue)
         {
             m_axisValuePrevious = currentAxisValue;
-            m_onIntegerChanged.Invoke(currentAxisValue);
+            m_onIntegerAxisChanged.Invoke(currentAxisValue);
         }
     }
 
