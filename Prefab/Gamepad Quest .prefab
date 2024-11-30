@@ -1,0 +1,278 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3908066514555599027
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3099121275642098771}
+  - component: {fileID: 649925877791099735}
+  m_Layer: 0
+  m_Name: 'Gamepad Quest '
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3099121275642098771
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3908066514555599027}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.16566776, y: 0.11065419, z: 2.4227958}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 3974065906107992674}
+  - {fileID: 8656515685790540764}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &649925877791099735
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3908066514555599027}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87b7020af6902104ea78a10964bf9a87, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_questGamepads2020:
+    m_gamepadAsRawValue:
+      m_buttonsState: 0
+      m_buttonsStateWithTag: 1000000000
+      m_axisState: 56653322
+      m_axisStateWithTag: 1156653322
+    m_gamepadHumanValue:
+      m_lr0_leftHorizontal11: -0.077
+      m_lr1_leftVertical11: 0.275
+      m_lr2_rightHorizontal11: 0.194
+      m_lr3_rightVertical11: 0.07
+      m_lr4_triggerLeft01: 0.264
+      m_lr5_triggerRight01: 0.19
+      m_lr6_gripLeft01: 0.136
+      m_lr7_gripRight01: 0.143
+      m_brl0_topLeft: 0
+      m_brl1_topRight: 0
+      m_brl2_downLeft: 0
+      m_brl3_downRight: 0
+      m_brl4_joystickLeft: 0
+      m_brl5_joystickRight: 0
+      m_brl6_thumbRestLeft: 0
+      m_brl7_thumbRestRight: 0
+      m_brl8_topLeftTouch: 0
+      m_brl9_topRightTouch: 0
+      m_brl10_downLeftTouch: 0
+      m_brl11_downRightTouch: 0
+      m_brl12_joystickLeftTouch: 0
+      m_brl13_joystickRightTouch: 0
+      m_brl14_triggerLeftTouch: 0
+      m_brl15_triggerRightTouch: 0
+      m_brl16_menuLeft: 0
+      m_brl17_menuRight: 0
+      m_brl18_isLeftTracked: 0
+      m_brl19_isRightTracked: 0
+      m_brl20_isTriggerLeftPressing: 0
+      m_brl21_isTriggerRightPressing: 0
+      m_brl22_isGripLeftPressing: 0
+      m_brl23_isGripRightPressing: 0
+  m_useOnValidate: 1
+--- !u!1 &5098408831742714033
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8656515685790540764}
+  - component: {fileID: 2581800837053571661}
+  m_Layer: 0
+  m_Name: Input
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8656515685790540764
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5098408831742714033}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3099121275642098771}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2581800837053571661
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5098408831742714033}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c116dae619dc0148a3d11f83ec19a53, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_target: {fileID: 649925877791099735}
+  m_joystickLeftHorizontal: {fileID: 0}
+  m_joystickLeftVertical: {fileID: 0}
+  m_joystickRightHorizontal: {fileID: 0}
+  m_joystickRightVertical: {fileID: 0}
+  m_triggerLeft: {fileID: 0}
+  m_triggerRight: {fileID: 0}
+  m_gripLeft: {fileID: 0}
+  m_gripRight: {fileID: 0}
+  m_buttonLeftTop: {fileID: 0}
+  m_buttonRightTop: {fileID: 0}
+  m_buttonLeftDown: {fileID: 0}
+  m_buttonRightDown: {fileID: 0}
+  m_buttonLeftJoystick: {fileID: 0}
+  m_buttonRightJoystick: {fileID: 0}
+  m_buttonLeftThumbRest: {fileID: 0}
+  m_buttonRightThumbRest: {fileID: 0}
+  m_menuLeft: {fileID: 0}
+  m_menuRight: {fileID: 0}
+  m_touchLeftTop: {fileID: 0}
+  m_touchRightTop: {fileID: 0}
+  m_touchLeftDown: {fileID: 0}
+  m_touchRightDown: {fileID: 0}
+  m_touchLeftJoystick: {fileID: 0}
+  m_touchRightJoystick: {fileID: 0}
+  m_touchLeftTrigger: {fileID: 0}
+  m_touchRightTrigger: {fileID: 0}
+  m_isLeftTracked: {fileID: 0}
+  m_isRightTracked: {fileID: 0}
+  m_triggerthresholdForButton: 0.2
+  m_gripThresholdForButton: 0.2
+--- !u!1 &5582940671754604838
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3974065906107992674}
+  - component: {fileID: 5681919039976904991}
+  m_Layer: 0
+  m_Name: Test
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3974065906107992674
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5582940671754604838}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3099121275642098771}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5681919039976904991
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5582940671754604838}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e72b2581dc5cba4289ddfe68264dec0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  from:
+    m_lr0_leftHorizontal11: 1
+    m_lr1_leftVertical11: 1
+    m_lr2_rightHorizontal11: 1
+    m_lr3_rightVertical11: -0.033
+    m_lr4_triggerLeft01: 0.396
+    m_lr5_triggerRight01: 0.322
+    m_lr6_gripLeft01: 0
+    m_lr7_gripRight01: 0
+    m_brl0_topLeft: 0
+    m_brl1_topRight: 1
+    m_brl2_downLeft: 1
+    m_brl3_downRight: 1
+    m_brl4_joystickLeft: 0
+    m_brl5_joystickRight: 1
+    m_brl6_thumbRestLeft: 1
+    m_brl7_thumbRestRight: 1
+    m_brl8_topLeftTouch: 0
+    m_brl9_topRightTouch: 0
+    m_brl10_downLeftTouch: 1
+    m_brl11_downRightTouch: 0
+    m_brl12_joystickLeftTouch: 0
+    m_brl13_joystickRightTouch: 0
+    m_brl14_triggerLeftTouch: 0
+    m_brl15_triggerRightTouch: 0
+    m_brl16_menuLeft: 1
+    m_brl17_menuRight: 1
+    m_brl18_isLeftTracked: 1
+    m_brl19_isRightTracked: 0
+    m_brl20_isTriggerLeftPressing: 1
+    m_brl21_isTriggerRightPressing: 1
+    m_brl22_isGripLeftPressing: 1
+    m_brl23_isGripRightPressing: 1
+  to:
+    m_buttonsState: 16188654
+    m_buttonsStateWithTag: 1016188654
+    m_axisState: 99954411
+    m_axisStateWithTag: 1199954411
+  recovered:
+    m_lr0_leftHorizontal11: 1
+    m_lr1_leftVertical11: 1
+    m_lr2_rightHorizontal11: 1
+    m_lr3_rightVertical11: 0
+    m_lr4_triggerLeft01: 0.375
+    m_lr5_triggerRight01: 0.375
+    m_lr6_gripLeft01: 0
+    m_lr7_gripRight01: 0
+    m_brl0_topLeft: 0
+    m_brl1_topRight: 1
+    m_brl2_downLeft: 1
+    m_brl3_downRight: 1
+    m_brl4_joystickLeft: 0
+    m_brl5_joystickRight: 1
+    m_brl6_thumbRestLeft: 1
+    m_brl7_thumbRestRight: 1
+    m_brl8_topLeftTouch: 0
+    m_brl9_topRightTouch: 0
+    m_brl10_downLeftTouch: 1
+    m_brl11_downRightTouch: 0
+    m_brl12_joystickLeftTouch: 0
+    m_brl13_joystickRightTouch: 0
+    m_brl14_triggerLeftTouch: 0
+    m_brl15_triggerRightTouch: 0
+    m_brl16_menuLeft: 1
+    m_brl17_menuRight: 1
+    m_brl18_isLeftTracked: 1
+    m_brl19_isRightTracked: 0
+    m_brl20_isTriggerLeftPressing: 1
+    m_brl21_isTriggerRightPressing: 1
+    m_brl22_isGripLeftPressing: 1
+    m_brl23_isGripRightPressing: 1

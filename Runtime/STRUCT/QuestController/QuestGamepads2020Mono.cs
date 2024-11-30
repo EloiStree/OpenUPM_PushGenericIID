@@ -1,14 +1,16 @@
 ﻿using System;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.InputSystem;
 
 public class QuestGamepads2020Mono : MonoBehaviour ,I_QuestGamepadSetGet
 {
 
     public QuestGamepads2020 m_questGamepads2020;
-
-
+    public UnityEvent<int> m_onIntegerChanged;
     public bool m_useOnValidate = true;
+    private int m_buttonValuePrevious;
+    private int m_axisValuePrevious;
 
     private void OnValidate()
     {
@@ -20,8 +22,19 @@ public class QuestGamepads2020Mono : MonoBehaviour ,I_QuestGamepadSetGet
 
     [ContextMenu("RefreshRawIntegerToHumanValue")]
     public void RefreshHumanValueToRawInteger() { 
-    
         m_questGamepads2020.RefreshHumanValueToRawInteger();
+        int currentButtonValue = m_questGamepads2020.m_gamepadAsRawValue.m_buttonsStateWithTag;
+        int currentAxisValue = m_questGamepads2020.m_gamepadAsRawValue.m_axisStateWithTag;
+        if (m_buttonValuePrevious != currentButtonValue)
+        {
+            m_buttonValuePrevious = currentButtonValue;
+            m_onIntegerChanged.Invoke(currentButtonValue);
+        }
+        if (m_axisValuePrevious != currentAxisValue)
+        {
+            m_axisValuePrevious = currentAxisValue;
+            m_onIntegerChanged.Invoke(currentAxisValue);
+        }
     }
 
     public bool GetDownLeft()
