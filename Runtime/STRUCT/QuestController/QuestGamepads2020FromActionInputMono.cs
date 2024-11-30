@@ -114,6 +114,8 @@ public class QuestGamepads2020FromActionInputMono : MonoBehaviour {
 
     public void OnEnable()
     {
+
+        EnableAllActionReference();
         if (m_joystickLeftHorizontal != null)
             m_joystickLeftHorizontal.action.performed += OnJoystickLeftHorizontal;
         if (m_joystickRightHorizontal != null)
@@ -174,6 +176,67 @@ public class QuestGamepads2020FromActionInputMono : MonoBehaviour {
             m_isLeftTracked.action.performed += OnIsLeftTracked;
         if (m_isRightTracked != null)
             m_isRightTracked.action.performed += OnIsRightTracked;
+
+        if (m_joystickLeftHorizontal != null)
+            m_joystickLeftHorizontal.action.canceled += OnJoystickLeftHorizontal;
+        if (m_joystickRightHorizontal != null)
+            m_joystickLeftVertical.action.canceled += OnJoystickLeftVertical;
+        if (m_joystickRightHorizontal != null)
+            m_joystickRightHorizontal.action.canceled += OnJoystickRightHorizontal;
+        if (m_joystickRightVertical != null)
+            m_joystickRightVertical.action.canceled += OnJoystickRightVertical;
+        if (m_triggerLeft != null)
+            m_triggerLeft.action.canceled += OnTriggerLeftFloatValue;
+        if (m_triggerRight != null)
+            m_triggerRight.action.canceled += OnTriggerRightFloatValue;
+        if (m_gripLeft != null)
+            m_gripLeft.action.canceled += OnGripLeftFloatValue;
+        if (m_gripRight != null)
+            m_gripRight.action.canceled += OnGripRightFloatValue;
+
+        if (m_buttonLeftTop != null)
+            m_buttonLeftTop.action.canceled += OnButtonLeftTop;
+        if (m_buttonRightTop != null)
+            m_buttonRightTop.action.canceled += OnButtonRightTop;
+        if (m_buttonLeftDown != null)
+            m_buttonLeftDown.action.canceled += OnButtonLeftDown;
+        if (m_buttonRightDown != null)
+            m_buttonRightDown.action.canceled += OnButtonRightDown;
+        if (m_buttonLeftJoystick != null)
+            m_buttonLeftJoystick.action.canceled += OnButtonLeftJoystick;
+        if (m_buttonRightJoystick != null)
+            m_buttonRightJoystick.action.canceled += OnButtonRightJoystick;
+        if (m_buttonLeftThumbRest != null)
+            m_buttonLeftThumbRest.action.canceled += OnButtonLeftThumbRest;
+        if (m_buttonRightThumbRest != null)
+            m_buttonRightThumbRest.action.canceled += OnButtonRightThumbRest;
+
+        if (m_menuLeft != null)
+            m_menuLeft.action.canceled += OnMenuLeft;
+        if (m_menuRight != null)
+            m_menuRight.action.canceled += OnMenuRight;
+
+        if (m_buttonLeftJoystick != null)
+            m_touchLeftTop.action.canceled += OnTouchLeftTop;
+        if (m_touchRightTop != null)
+            m_touchRightTop.action.canceled += OnTouchRightTop;
+
+        if (m_touchLeftDown != null)
+            m_touchLeftDown.action.canceled += OnTouchLeftDown;
+        if (m_touchRightDown != null)
+            m_touchRightDown.action.canceled += OnTouchRightDown;
+        if (m_touchLeftJoystick != null)
+            m_touchLeftJoystick.action.canceled += OnTouchLeftJoystick;
+        if (m_touchRightJoystick != null)
+            m_touchRightJoystick.action.canceled += OnTouchRightJoystick;
+        if (m_buttonLeftJoystick != null)
+            m_touchLeftTrigger.action.canceled += OnTouchLeftTrigger;
+        if (m_touchRightTrigger != null)
+            m_touchRightTrigger.action.canceled += OnTouchRightTrigger;
+        if (m_isLeftTracked != null)
+            m_isLeftTracked.action.canceled += OnIsLeftTracked;
+        if (m_isRightTracked != null)
+            m_isRightTracked.action.canceled += OnIsRightTracked;
 
     }
 
@@ -237,6 +300,64 @@ public class QuestGamepads2020FromActionInputMono : MonoBehaviour {
             m_isLeftTracked.action.performed -= OnIsLeftTracked;
         if (m_isRightTracked != null)
             m_isRightTracked.action.performed -= OnIsRightTracked;
+
+        if (m_joystickLeftHorizontal != null)
+            m_joystickLeftHorizontal.action.canceled -= OnJoystickLeftHorizontal;
+        if (m_joystickRightHorizontal != null)
+            m_joystickLeftVertical.action.canceled -= OnJoystickLeftVertical;
+        if (m_joystickRightHorizontal != null)
+            m_joystickRightHorizontal.action.canceled -= OnJoystickRightHorizontal;
+        if (m_joystickRightVertical != null)
+            m_joystickRightVertical.action.canceled -= OnJoystickRightVertical;
+        if (m_triggerLeft != null)
+            m_triggerLeft.action.canceled -= OnTriggerLeftFloatValue;
+        if (m_triggerRight != null)
+            m_triggerRight.action.canceled -= OnTriggerRightFloatValue;
+        if (m_gripLeft != null)
+            m_gripLeft.action.canceled -= OnGripLeftFloatValue;
+        if (m_gripRight != null)
+            m_gripRight.action.canceled -= OnGripRightFloatValue;
+
+        if (m_buttonLeftTop != null)
+            m_buttonLeftTop.action.canceled -= OnButtonLeftTop;
+        if (m_buttonRightTop != null)
+            m_buttonRightTop.action.canceled -= OnButtonRightTop;
+        if (m_buttonLeftDown != null)
+            m_buttonLeftDown.action.canceled -= OnButtonLeftDown;
+        if (m_buttonRightDown != null)
+            m_buttonRightDown.action.canceled -= OnButtonRightDown;
+        if (m_buttonLeftJoystick != null)
+            m_buttonLeftJoystick.action.canceled -= OnButtonLeftJoystick;
+        if (m_buttonRightJoystick != null)
+            m_buttonRightJoystick.action.canceled -= OnButtonRightJoystick;
+        if (m_buttonLeftThumbRest != null)
+            m_buttonLeftThumbRest.action.canceled -= OnButtonLeftThumbRest;
+        if (m_buttonRightThumbRest != null)
+            m_buttonRightThumbRest.action.canceled -= OnButtonRightThumbRest;
+        if (m_menuLeft != null)
+            m_menuLeft.action.canceled -= OnMenuLeft;
+        if (m_menuRight != null)
+            m_menuRight.action.canceled -= OnMenuRight;
+        if (m_buttonLeftJoystick != null)
+            m_touchLeftTop.action.canceled -= OnTouchLeftTop;
+        if (m_touchRightTop != null)
+            m_touchRightTop.action.canceled -= OnTouchRightTop;
+        if (m_touchLeftDown != null)
+            m_touchLeftDown.action.canceled -= OnTouchLeftDown;
+        if (m_touchRightDown != null)
+            m_touchRightDown.action.canceled -= OnTouchRightDown;
+        if (m_touchLeftJoystick != null)
+            m_touchLeftJoystick.action.canceled -= OnTouchLeftJoystick;
+        if (m_touchRightJoystick != null)
+            m_touchRightJoystick.action.canceled -= OnTouchRightJoystick;
+        if (m_buttonLeftJoystick != null)
+            m_touchLeftTrigger.action.canceled -= OnTouchLeftTrigger;
+        if (m_touchRightTrigger != null)
+            m_touchRightTrigger.action.canceled -= OnTouchRightTrigger;
+        if (m_isLeftTracked != null)
+            m_isLeftTracked.action.canceled -= OnIsLeftTracked;
+        if (m_isRightTracked != null)
+            m_isRightTracked.action.canceled -= OnIsRightTracked;
     }
 
 
