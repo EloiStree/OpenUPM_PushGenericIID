@@ -1,6 +1,9 @@
 ﻿using System;
 using UnityEngine;
 
+
+
+
 public class IntegerToGamepad2020Utility
 {
     public static void ParseGamepadByteId2020FromInteger(int value, out STRUCT_GamepadByteId2020Percent11 gamepad)
