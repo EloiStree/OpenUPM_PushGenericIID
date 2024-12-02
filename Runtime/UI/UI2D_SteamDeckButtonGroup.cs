@@ -5,25 +5,28 @@ using UnityEngine.InputSystem;
 
 public class UI2D_SteamDeckButtonGroup : MonoBehaviour
 {
-    public int m_tag2020 = 0100000000;
+    public int m_tag2020 = 0000000000; //0100000000;
+    public int m_addValuePress = 1800;
+    public int m_addValueRelease =2800;
     public UnityEvent<int> m_steamDeckPusher; 
     public UI2D_SteamDeckButton[] m_buttons;
     public bool[] m_buttonsIsOn;
 
     public InputActionReference m_mousePosition;
     public InputActionReference m_mousePression;
+    public bool m_isPressing;
+    public Vector2 m_inputPosition;
+    public int m_lastPushed;
     void Awake()
     {
         
 
         FetchButtonInChildrens();
     }
-    public bool m_isPressing;
-    public Vector2 m_inputPosition;
 
     private void OnEnable()
     {
-        m_mousePosition.action.Enable();
+        m_mousePression.action.Enable();
         m_mousePression.action.performed += OnMousePression;
         m_mousePression.action.canceled += OnMousePression;
 
@@ -62,7 +65,7 @@ public class UI2D_SteamDeckButtonGroup : MonoBehaviour
                     if (m_buttons[i].IsMouseOverPanelPixel(m_inputPosition))
                     {
                         m_buttonsIsOn[i] = true;
-                        m_steamDeckPusher.Invoke(i+  m_tag2020);
+                        PushIntegerAddTag(i+m_addValuePress);
                     }
                 }
             }
@@ -73,11 +76,16 @@ public class UI2D_SteamDeckButtonGroup : MonoBehaviour
                     if (m_buttonsIsOn[i])
                     {
                         m_buttonsIsOn[i] = false;
-                        m_steamDeckPusher.Invoke(i + m_tag2020);
+                        PushIntegerAddTag(i + m_addValueRelease);
                     }
                 }
             }
         }
+    }
+
+    private void PushIntegerAddTag(int i)
+    {
+        m_steamDeckPusher.Invoke(i + m_tag2020);
     }
 
     [ContextMenu("Fretch button in childrens")]

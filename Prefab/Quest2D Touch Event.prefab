@@ -1,0 +1,236 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1281940778000931373
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1103038355022672028}
+  - component: {fileID: 8014810580401748026}
+  m_Layer: 0
+  m_Name: Mouse Touch 1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1103038355022672028
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1281940778000931373}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8696554977123107929}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8014810580401748026
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1281940778000931373}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 526b4082d478cb94f99e7137d4548298, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_action:
+    m_onIntegerAction:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 0}
+          m_TargetAssemblyTypeName: PushGenericMono_IntegerRelay, be.elab.pushgenericintegerdate
+          m_MethodName: PushIn
+          m_Mode: 0
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    m_onTrue: fd2a0000
+    m_onFalse: f5550000
+    m_onChanged: ed800000
+    m_value: 0
+--- !u!1 &4928246706881700101
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8696554977123107929}
+  - component: {fileID: 9059033328959638505}
+  m_Layer: 0
+  m_Name: Quest2D Touch Event
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8696554977123107929
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4928246706881700101}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 8769306203483600803}
+  - {fileID: 1103038355022672028}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &9059033328959638505
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4928246706881700101}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf2505504895517428fa843fd8463ca9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_isPrimaryTouchPressing: 0
+  m_isSecondaryTouchPressing: 0
+  m_primaryTouchPosition: {x: 0, y: 0}
+  m_secondaryTouchPosition: {x: 0, y: 0}
+  m_primaryTouchPositionStart: {x: 0, y: 0}
+  m_secondaryTouchPositionStart: {x: 0, y: 0}
+  m_primaryTouchPressingRef: {fileID: 8915977595455527548, guid: b693182739554f14b8165eb4ee56de2d,
+    type: 3}
+  m_secondaryTouchPressingRef: {fileID: -4415367095922469977, guid: b693182739554f14b8165eb4ee56de2d,
+    type: 3}
+  m_primaryTouchPositionRef: {fileID: -5954036441889634040, guid: b693182739554f14b8165eb4ee56de2d,
+    type: 3}
+  m_secondaryTouchPositionRef: {fileID: -8899239246315088029, guid: b693182739554f14b8165eb4ee56de2d,
+    type: 3}
+  m_primaryTouchPositionStartRef: {fileID: 837359582499579840, guid: b693182739554f14b8165eb4ee56de2d,
+    type: 3}
+  m_secondaryTouchPositionStartRef: {fileID: -2434686352505450146, guid: b693182739554f14b8165eb4ee56de2d,
+    type: 3}
+  m_onPrimaryTouchPosition:
+    m_PersistentCalls:
+      m_Calls: []
+  m_onSecondaryTouchPosition:
+    m_PersistentCalls:
+      m_Calls: []
+  m_onPrimaryTouchPositionStarted:
+    m_PersistentCalls:
+      m_Calls: []
+  m_onSecondaryTouchPositionStarted:
+    m_PersistentCalls:
+      m_Calls: []
+  m_onPrimaryTouchPressing:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5523269863931093749}
+        m_TargetAssemblyTypeName: IntEventMono_FromBoolean, be.elab.pushgenericintegerdate
+        m_MethodName: PushIn
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  m_onSecondaryTouchPressing:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8014810580401748026}
+        m_TargetAssemblyTypeName: IntEventMono_FromBoolean, be.elab.pushgenericintegerdate
+        m_MethodName: PushIn
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!1 &6821379755058203840
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8769306203483600803}
+  - component: {fileID: 5523269863931093749}
+  m_Layer: 0
+  m_Name: Mouse Touch 0
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8769306203483600803
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6821379755058203840}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8696554977123107929}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5523269863931093749
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6821379755058203840}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 526b4082d478cb94f99e7137d4548298, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_action:
+    m_onIntegerAction:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 0}
+          m_TargetAssemblyTypeName: PushGenericMono_IntegerRelay, be.elab.pushgenericintegerdate
+          m_MethodName: PushIn
+          m_Mode: 0
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    m_onTrue: fc2a0000
+    m_onFalse: f4550000
+    m_onChanged: ec800000
+    m_value: 0

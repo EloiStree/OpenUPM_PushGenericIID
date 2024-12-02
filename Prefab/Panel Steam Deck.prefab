@@ -172,7 +172,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 815995ce82ef10249bd744c60bd3053f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_tag2020: 100000000
+  m_tag2020: 0
+  m_addValuePress: 1600
+  m_addValueRelease: 2600
   m_steamDeckPusher:
     m_PersistentCalls:
       m_Calls:
@@ -228,6 +230,7 @@ MonoBehaviour:
     type: 3}
   m_isPressing: 0
   m_inputPosition: {x: 0, y: 0}
+  m_lastPushed: 0
 --- !u!114 &6629595776811069109
 MonoBehaviour:
   m_ObjectHideFlags: 0

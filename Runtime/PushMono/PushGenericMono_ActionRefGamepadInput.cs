@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
 
-public class PushGenericMono_ActoinRefGamepadInput : MonoBehaviour
+public class PushGenericMono_ActionRefGamepadInput : MonoBehaviour
 {
 
     public UnityEvent<Vector2> m_joystickLeft;
