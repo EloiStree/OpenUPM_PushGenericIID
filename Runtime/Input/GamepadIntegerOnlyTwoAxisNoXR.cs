@@ -66,13 +66,40 @@ namespace GenericInputIID
                     ""initialStateCheck"": true
                 },
                 {
-                    ""name"": ""FireBullet"",
-                    ""type"": ""Button"",
-                    ""id"": ""5f13c674-f960-462f-b0d5-20f9b6e811e6"",
-                    ""expectedControlType"": ""Button"",
+                    ""name"": ""JoystickLeft2D"",
+                    ""type"": ""Value"",
+                    ""id"": ""fec7794f-7150-4794-964a-06dea54d0fd8"",
+                    ""expectedControlType"": ""Vector2"",
                     ""processors"": """",
                     ""interactions"": """",
-                    ""initialStateCheck"": false
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""JoystickRight2D"",
+                    ""type"": ""Value"",
+                    ""id"": ""028d29dc-e7c8-417e-be4e-f3ad3444b041"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""TriggerLeft"",
+                    ""type"": ""Value"",
+                    ""id"": ""c363944d-527d-4cab-b8f7-0b8d88229651"",
+                    ""expectedControlType"": ""Axis"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""TriggerRight"",
+                    ""type"": ""Value"",
+                    ""id"": ""3af52bff-2e46-4d96-89ac-8418e201fe55"",
+                    ""expectedControlType"": ""Axis"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
                 }
             ],
             ""bindings"": [
@@ -254,56 +281,45 @@ namespace GenericInputIID
                 },
                 {
                     ""name"": """",
-                    ""id"": ""3a20c89e-5bf2-4cbd-bbf8-034bcd62d930"",
-                    ""path"": ""<XInputController>/buttonSouth"",
+                    ""id"": ""c26a5176-ff57-4c6c-ad42-b2273ca9919b"",
+                    ""path"": ""<Gamepad>/leftStick"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""FireBullet"",
+                    ""action"": ""JoystickLeft2D"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
                 {
                     ""name"": """",
-                    ""id"": ""5ce179a6-e859-4bfd-8fcd-3922a358df78"",
-                    ""path"": ""<Gamepad>/leftShoulder"",
+                    ""id"": ""3e62c1b4-a3e0-4f1a-99fb-892d6a44ee7e"",
+                    ""path"": ""<Gamepad>/rightStick"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""FireBullet"",
+                    ""action"": ""JoystickRight2D"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
                 {
                     ""name"": """",
-                    ""id"": ""7a898f33-6102-45c9-bc50-5e64c2007784"",
-                    ""path"": ""<Gamepad>/rightShoulder"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""FireBullet"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""b61c7dd0-37fe-46ea-ad3b-4323d23f4a7d"",
+                    ""id"": ""a15773c4-86cd-4e74-86cf-4f85d9bb8088"",
                     ""path"": ""<Gamepad>/leftTrigger"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""FireBullet"",
+                    ""action"": ""TriggerLeft"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
                 {
                     ""name"": """",
-                    ""id"": ""522148be-af3f-4367-a7b3-6b4d3de6a602"",
+                    ""id"": ""fe0ecba4-5e0c-4ab0-9a97-5089605e856e"",
                     ""path"": ""<Gamepad>/rightTrigger"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""FireBullet"",
+                    ""action"": ""TriggerRight"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -318,7 +334,10 @@ namespace GenericInputIID
             m_GamepadTwoJoystick_LeftJoystickVertical = m_GamepadTwoJoystick.FindAction("LeftJoystickVertical", throwIfNotFound: true);
             m_GamepadTwoJoystick_RightJoystickHorizontal = m_GamepadTwoJoystick.FindAction("RightJoystickHorizontal", throwIfNotFound: true);
             m_GamepadTwoJoystick_RightJoystickVertical = m_GamepadTwoJoystick.FindAction("RightJoystickVertical", throwIfNotFound: true);
-            m_GamepadTwoJoystick_FireBullet = m_GamepadTwoJoystick.FindAction("FireBullet", throwIfNotFound: true);
+            m_GamepadTwoJoystick_JoystickLeft2D = m_GamepadTwoJoystick.FindAction("JoystickLeft2D", throwIfNotFound: true);
+            m_GamepadTwoJoystick_JoystickRight2D = m_GamepadTwoJoystick.FindAction("JoystickRight2D", throwIfNotFound: true);
+            m_GamepadTwoJoystick_TriggerLeft = m_GamepadTwoJoystick.FindAction("TriggerLeft", throwIfNotFound: true);
+            m_GamepadTwoJoystick_TriggerRight = m_GamepadTwoJoystick.FindAction("TriggerRight", throwIfNotFound: true);
         }
 
         public void Dispose()
@@ -384,7 +403,10 @@ namespace GenericInputIID
         private readonly InputAction m_GamepadTwoJoystick_LeftJoystickVertical;
         private readonly InputAction m_GamepadTwoJoystick_RightJoystickHorizontal;
         private readonly InputAction m_GamepadTwoJoystick_RightJoystickVertical;
-        private readonly InputAction m_GamepadTwoJoystick_FireBullet;
+        private readonly InputAction m_GamepadTwoJoystick_JoystickLeft2D;
+        private readonly InputAction m_GamepadTwoJoystick_JoystickRight2D;
+        private readonly InputAction m_GamepadTwoJoystick_TriggerLeft;
+        private readonly InputAction m_GamepadTwoJoystick_TriggerRight;
         public struct GamepadTwoJoystickActions
         {
             private @GamepadIntegerOnlyTwoAxisNoXR m_Wrapper;
@@ -393,7 +415,10 @@ namespace GenericInputIID
             public InputAction @LeftJoystickVertical => m_Wrapper.m_GamepadTwoJoystick_LeftJoystickVertical;
             public InputAction @RightJoystickHorizontal => m_Wrapper.m_GamepadTwoJoystick_RightJoystickHorizontal;
             public InputAction @RightJoystickVertical => m_Wrapper.m_GamepadTwoJoystick_RightJoystickVertical;
-            public InputAction @FireBullet => m_Wrapper.m_GamepadTwoJoystick_FireBullet;
+            public InputAction @JoystickLeft2D => m_Wrapper.m_GamepadTwoJoystick_JoystickLeft2D;
+            public InputAction @JoystickRight2D => m_Wrapper.m_GamepadTwoJoystick_JoystickRight2D;
+            public InputAction @TriggerLeft => m_Wrapper.m_GamepadTwoJoystick_TriggerLeft;
+            public InputAction @TriggerRight => m_Wrapper.m_GamepadTwoJoystick_TriggerRight;
             public InputActionMap Get() { return m_Wrapper.m_GamepadTwoJoystick; }
             public void Enable() { Get().Enable(); }
             public void Disable() { Get().Disable(); }
@@ -415,9 +440,18 @@ namespace GenericInputIID
                 @RightJoystickVertical.started += instance.OnRightJoystickVertical;
                 @RightJoystickVertical.performed += instance.OnRightJoystickVertical;
                 @RightJoystickVertical.canceled += instance.OnRightJoystickVertical;
-                @FireBullet.started += instance.OnFireBullet;
-                @FireBullet.performed += instance.OnFireBullet;
-                @FireBullet.canceled += instance.OnFireBullet;
+                @JoystickLeft2D.started += instance.OnJoystickLeft2D;
+                @JoystickLeft2D.performed += instance.OnJoystickLeft2D;
+                @JoystickLeft2D.canceled += instance.OnJoystickLeft2D;
+                @JoystickRight2D.started += instance.OnJoystickRight2D;
+                @JoystickRight2D.performed += instance.OnJoystickRight2D;
+                @JoystickRight2D.canceled += instance.OnJoystickRight2D;
+                @TriggerLeft.started += instance.OnTriggerLeft;
+                @TriggerLeft.performed += instance.OnTriggerLeft;
+                @TriggerLeft.canceled += instance.OnTriggerLeft;
+                @TriggerRight.started += instance.OnTriggerRight;
+                @TriggerRight.performed += instance.OnTriggerRight;
+                @TriggerRight.canceled += instance.OnTriggerRight;
             }
 
             private void UnregisterCallbacks(IGamepadTwoJoystickActions instance)
@@ -434,9 +468,18 @@ namespace GenericInputIID
                 @RightJoystickVertical.started -= instance.OnRightJoystickVertical;
                 @RightJoystickVertical.performed -= instance.OnRightJoystickVertical;
                 @RightJoystickVertical.canceled -= instance.OnRightJoystickVertical;
-                @FireBullet.started -= instance.OnFireBullet;
-                @FireBullet.performed -= instance.OnFireBullet;
-                @FireBullet.canceled -= instance.OnFireBullet;
+                @JoystickLeft2D.started -= instance.OnJoystickLeft2D;
+                @JoystickLeft2D.performed -= instance.OnJoystickLeft2D;
+                @JoystickLeft2D.canceled -= instance.OnJoystickLeft2D;
+                @JoystickRight2D.started -= instance.OnJoystickRight2D;
+                @JoystickRight2D.performed -= instance.OnJoystickRight2D;
+                @JoystickRight2D.canceled -= instance.OnJoystickRight2D;
+                @TriggerLeft.started -= instance.OnTriggerLeft;
+                @TriggerLeft.performed -= instance.OnTriggerLeft;
+                @TriggerLeft.canceled -= instance.OnTriggerLeft;
+                @TriggerRight.started -= instance.OnTriggerRight;
+                @TriggerRight.performed -= instance.OnTriggerRight;
+                @TriggerRight.canceled -= instance.OnTriggerRight;
             }
 
             public void RemoveCallbacks(IGamepadTwoJoystickActions instance)
@@ -460,7 +503,10 @@ namespace GenericInputIID
             void OnLeftJoystickVertical(InputAction.CallbackContext context);
             void OnRightJoystickHorizontal(InputAction.CallbackContext context);
             void OnRightJoystickVertical(InputAction.CallbackContext context);
-            void OnFireBullet(InputAction.CallbackContext context);
+            void OnJoystickLeft2D(InputAction.CallbackContext context);
+            void OnJoystickRight2D(InputAction.CallbackContext context);
+            void OnTriggerLeft(InputAction.CallbackContext context);
+            void OnTriggerRight(InputAction.CallbackContext context);
         }
     }
 }

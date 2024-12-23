@@ -69,10 +69,6 @@ public class PushGenericMono_GamepadInput : MonoBehaviour
                   (InputAction.CallbackContext obj) => m_joystickRightVertical = 0;
 
 
-        if (m_input.GamepadTwoJoystick.FireBullet.WasPressedThisFrame())
-            m_onIntegerValueChanged.Invoke(m_fireOnAction);
-        if (m_input.GamepadTwoJoystick.FireBullet.WasReleasedThisFrame())
-            m_onIntegerValueChanged.Invoke(m_fireOffAction);
 
         int value = 0;
         value += (int)(TurnPercent11To099(m_joystickRightVertical));
