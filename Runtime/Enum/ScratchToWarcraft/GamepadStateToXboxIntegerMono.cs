@@ -112,8 +112,8 @@ public class GamepadStateToXboxIntegerMono : MonoBehaviour
     public ListenToAxisInput m_pressB = new ListenToAxisInput(EnumScratchToWarcraftGamepad.PressB, null, null, 0.5f);
     public ListenToAxisInput m_pressY= new ListenToAxisInput(EnumScratchToWarcraftGamepad.PressY, null, null, 0.5f);
 
-    public ListenToAxisInput m_pressArrowLeft = new ListenToAxisInput(EnumScratchToWarcraftGamepad.PressArrowEast, null, null, 0.5f);
-    public ListenToAxisInput m_pressArrowRight = new ListenToAxisInput(EnumScratchToWarcraftGamepad.PressArrowWest, null, null, 0.5f);
+    public ListenToAxisInput m_pressArrowLeft = new ListenToAxisInput(EnumScratchToWarcraftGamepad.PressArrowWest, null, null, 0.5f);
+    public ListenToAxisInput m_pressArrowRight = new ListenToAxisInput(EnumScratchToWarcraftGamepad.PressArrowEast, null, null, 0.5f);
 
     public ListenToAxisInput m_pressArrowUp= new ListenToAxisInput(EnumScratchToWarcraftGamepad.PressArrowNorth, null, null, 0.5f);
     public ListenToAxisInput m_pressArrowDown = new ListenToAxisInput(EnumScratchToWarcraftGamepad.PressArrowSouth, null, null, 0.5f);
@@ -129,7 +129,7 @@ public class GamepadStateToXboxIntegerMono : MonoBehaviour
     public ListenToAxisInput m_pressMenuCenter = new ListenToAxisInput(EnumScratchToWarcraftGamepad.PressXboxHomeButton, null, null, 0.5f);
 
     public ListenToAxisInput m_pressLeftTrigger1D = new ListenToAxisInput(EnumScratchToWarcraftGamepad.SetLeftTriggerTo100, null, null, 0.1f);
-    public ListenToAxisInput m_pressRightTrigger1D = new ListenToAxisInput(EnumScratchToWarcraftGamepad.SetLeftTriggerTo100, null, null, 0.1f);
+    public ListenToAxisInput m_pressRightTrigger1D = new ListenToAxisInput(EnumScratchToWarcraftGamepad.SetRightTriggerTo100, null, null, 0.1f);
 
     public ListenToJoystickInput m_leftStick = new ListenToJoystickInput(ListenToJoystickInput.JoystickType.LeftStick, null, null, 0.45f);
     public ListenToJoystickInput m_rightStick = new ListenToJoystickInput(ListenToJoystickInput.JoystickType.RightStick, null, null, 0.45f);
