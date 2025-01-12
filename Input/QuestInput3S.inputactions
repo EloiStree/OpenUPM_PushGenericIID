@@ -1,0 +1,598 @@
+{
+    "name": "QuestInput3S",
+    "maps": [
+        {
+            "name": "DefaultQuest3S Joystick",
+            "id": "533f47b8-f8f4-4098-b23a-3f990f552f1d",
+            "actions": [
+                {
+                    "name": "JoystickLeftHorizontal",
+                    "type": "Value",
+                    "id": "3fab2392-bb16-44c3-9a35-3b4d319d1f66",
+                    "expectedControlType": "Analog",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "JoystickLeftVertical",
+                    "type": "Value",
+                    "id": "c7c7251e-7837-47ae-9539-874b9ec94b5b",
+                    "expectedControlType": "Analog",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "JoystickRightHorizontal",
+                    "type": "Value",
+                    "id": "68fa14d4-4b4c-49e1-a92f-7d35b54bb4a7",
+                    "expectedControlType": "Analog",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "JoystickRightVertical",
+                    "type": "Value",
+                    "id": "10684199-48ab-400d-b4c0-9cab82c1fe0d",
+                    "expectedControlType": "Analog",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "TriggerLeft",
+                    "type": "Value",
+                    "id": "ca2f40fe-db55-4a9b-8b5b-25d78bb9d1e0",
+                    "expectedControlType": "Analog",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "TriggerRight",
+                    "type": "Value",
+                    "id": "9db78d8a-e492-4daf-a17c-5118d1e19ff6",
+                    "expectedControlType": "Analog",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "GripLeft",
+                    "type": "Value",
+                    "id": "e328ee54-7da1-4344-99bb-aef4475aaeee",
+                    "expectedControlType": "Analog",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "GripRight",
+                    "type": "Value",
+                    "id": "39e2c87d-732f-431a-9556-a079e0cdd858",
+                    "expectedControlType": "Analog",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "423669d5-5827-4e49-8bb5-07f0068ac02f",
+                    "path": "<OculusTouchController>{LeftHand}/thumbstick/y",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "JoystickLeftVertical",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "11642c54-9964-4550-83ff-9de4afc661f9",
+                    "path": "<OculusTouchController>{LeftHand}/thumbstick/x",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "JoystickLeftHorizontal",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d2ff9d09-08c8-406d-b8cc-cdeeb8bbecfc",
+                    "path": "<OculusTouchController>{RightHand}/thumbstick/x",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "JoystickRightHorizontal",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d751c15c-17ed-4996-87d5-2845c66aba22",
+                    "path": "<OculusTouchController>{RightHand}/thumbstick/y",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "JoystickRightVertical",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "e317f8c8-053f-401d-9a7c-a75419b3ccb7",
+                    "path": "<OculusTouchController>{LeftHand}/trigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "TriggerLeft",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "cc4ba32d-b397-487c-9138-803d7dee70a4",
+                    "path": "<OculusTouchController>{RightHand}/trigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "TriggerRight",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "95e0362a-d4f5-41ca-b722-07f4c89f227c",
+                    "path": "<OculusTouchController>{LeftHand}/grip",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "GripLeft",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "ef503909-5c1f-4554-8bb8-b40875e0a56c",
+                    "path": "<OculusTouchController>{RightHand}/grip",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "GripRight",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "DefaultQuest3S Buttons",
+            "id": "3dd7c28a-3c59-4fe9-8cf0-fb4433604cd8",
+            "actions": [
+                {
+                    "name": "ButtonLeftTop",
+                    "type": "Button",
+                    "id": "ad56572b-778a-4358-bce6-beb14d093f9d",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "ButtonLeftDown",
+                    "type": "Button",
+                    "id": "399958cb-3059-46f8-b8f5-665d2cbb41ee",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "ButtonRightTop",
+                    "type": "Button",
+                    "id": "4b52ac8b-85d5-4bab-a22b-15dadd37b60c",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "ButtonRightDown",
+                    "type": "Button",
+                    "id": "72502bee-170a-467d-97be-3915caf0ad5c",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "ButtonJoystickLeft",
+                    "type": "Button",
+                    "id": "d4ed187f-7f9d-4f26-b937-c76c811246d8",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "ButtonJoystickRight",
+                    "type": "Button",
+                    "id": "1fd443ae-9516-42a3-952f-dc1fe4c38559",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "ButtonMenuLeft",
+                    "type": "Button",
+                    "id": "33350d11-fee9-4339-af15-48dfcc14bd05",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "ButtonMenuRight",
+                    "type": "Button",
+                    "id": "df6c9296-f6cb-43cf-97e0-65648970a660",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "ButtonThumbRestLeft",
+                    "type": "Button",
+                    "id": "9458caae-6ef2-4653-a636-0c044515f693",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "ButtonThumbRestRight",
+                    "type": "Button",
+                    "id": "f6c92d44-54aa-458f-9345-aedfdcfb0d99",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "483fb7c4-b3e1-4e7c-82b2-8af9c8fb6628",
+                    "path": "<XRInputV1::Oculus::OculusTouchControllerLeft>{LeftHand}/secondarybutton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ButtonLeftTop",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "dd7d7c96-66f6-481f-8822-328df71eb32c",
+                    "path": "<XRInputV1::Oculus::OculusTouchControllerLeft>{LeftHand}/primarybutton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ButtonLeftDown",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "78f78d62-d818-41a8-81fc-a9b33e43b414",
+                    "path": "<XRInputV1::Oculus::OculusTouchControllerRight>{RightHand}/secondarybutton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ButtonRightTop",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "f7c991cd-d337-4571-bff1-b815c111acf4",
+                    "path": "<XRInputV1::Oculus::OculusTouchControllerRight>{RightHand}/primarybutton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ButtonRightDown",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "0c1cc56a-1623-41e6-9bb7-7b48b628c632",
+                    "path": "<XRInputV1::Oculus::OculusTouchControllerLeft>{LeftHand}/thumbstickclicked",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ButtonJoystickLeft",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "1ed085dd-6480-4432-9dc3-435a572b7ec8",
+                    "path": "<XRInputV1::Oculus::OculusTouchControllerRight>{RightHand}/thumbstickclicked",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ButtonJoystickRight",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "3b6d6521-6075-43e6-bc02-427546327f05",
+                    "path": "<XRInputV1::Oculus::OculusTouchControllerLeft>{LeftHand}/start",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ButtonMenuLeft",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "ea12d989-4680-457b-876e-c806e9231760",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ButtonMenuRight",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "5bdc985a-3397-49e3-8eb0-c90e0d11ff10",
+                    "path": "<XRInputV1::Oculus::OculusTouchControllerLeft>{LeftHand}/thumbresttouch",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ButtonThumbRestLeft",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c140f566-d346-4d43-85b6-61ec832f1c22",
+                    "path": "<XRInputV1::Oculus::OculusTouchControllerRight>{RightHand}/thumbresttouch",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ButtonThumbRestRight",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "DefaultQuest3S Touch",
+            "id": "92d7df57-c82f-43d3-bb2e-6dc0049ef8e1",
+            "actions": [
+                {
+                    "name": "TouchLeftTrigger",
+                    "type": "Button",
+                    "id": "f00bb6aa-2f5b-4849-b7f9-74230433906e",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "TouchRightTrigger",
+                    "type": "Button",
+                    "id": "44704339-ffd3-4be4-829c-858259b6b87a",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "TouchLeftJoystick",
+                    "type": "Button",
+                    "id": "ceac8a4c-134a-4ba3-9aea-b0a398ccb2db",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "TouchRightJoystick",
+                    "type": "Button",
+                    "id": "46f6ad89-4769-4979-adba-9154f7914b1b",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "TouchLeftTop",
+                    "type": "Button",
+                    "id": "e50ab715-5207-4926-9028-e306073c2e9e",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "TouchRightTop",
+                    "type": "Button",
+                    "id": "5d563311-7a24-4d1b-b147-999f4050ddc2",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "TouchLeftDown",
+                    "type": "Button",
+                    "id": "a0935977-973a-4447-8829-c16b61f4ab3d",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "TouchRightDown",
+                    "type": "Button",
+                    "id": "1923c137-d8e8-4002-a918-63c107deba0c",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "ecf4406a-3182-41fd-a2d3-9a71946ee2eb",
+                    "path": "<XRInputV1::Oculus::OculusTouchControllerLeft>{LeftHand}/triggertouched",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "TouchLeftTrigger",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "88d1cd60-265f-4ff5-aa66-e2496fbcc121",
+                    "path": "<XRInputV1::Oculus::OculusTouchControllerRight>{RightHand}/triggertouched",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "TouchRightTrigger",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "5636f71d-fe4b-4d57-a1dc-2efd2f0f40b4",
+                    "path": "<XRInputV1::Oculus::OculusTouchControllerLeft>{LeftHand}/thumbsticktouched",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "TouchLeftJoystick",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "772d7d94-3665-4b70-b2be-1db6adf12f96",
+                    "path": "<XRInputV1::Oculus::OculusTouchControllerRight>{RightHand}/thumbsticktouched",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "TouchRightJoystick",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "6098406c-8fcf-4b2d-a3ff-474fb35dbdbc",
+                    "path": "<XRInputV1::Oculus::OculusTouchControllerLeft>{LeftHand}/secondarytouched",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "TouchLeftTop",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "6ace021d-2781-460b-9158-0bd3dff90729",
+                    "path": "<XRInputV1::Oculus::OculusTouchControllerRight>{RightHand}/secondarytouched",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "TouchRightTop",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "2b1fe5a9-a398-4734-94eb-7101573228d8",
+                    "path": "<XRInputV1::Oculus::OculusTouchControllerLeft>{LeftHand}/primarytouched",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "TouchLeftDown",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "b7bbdcd5-ce82-4db1-8abd-3c96ee4c6b1c",
+                    "path": "<XRInputV1::Oculus::OculusTouchControllerRight>{RightHand}/primarytouched",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "TouchRightDown",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "DefautlQuest3S Extra",
+            "id": "36ef41ae-de76-4351-8794-89092d2a2149",
+            "actions": [
+                {
+                    "name": "IsTrackedLeft",
+                    "type": "Button",
+                    "id": "6caf3535-ee5c-41f9-a9e2-8a22b000b950",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "IsTrackedRight",
+                    "type": "Button",
+                    "id": "db2e4ff0-843c-4064-9f94-20cf2b4f927f",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "2fa5e2bd-ba61-492e-8103-2267ac00224e",
+                    "path": "<XRInputV1::Oculus::OculusTouchControllerRight>{LeftHand}/istracked",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "IsTrackedLeft",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "bd597b05-e7cc-4711-9566-424b3f412308",
+                    "path": "<XRInputV1::Oculus::OculusTouchControllerLeft>{RightHand}/istracked",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "IsTrackedRight",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
