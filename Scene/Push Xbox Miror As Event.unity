@@ -302,7 +302,7 @@ MonoBehaviour:
         m_CallState: 2
   m_lastReceivedValue: 0
   m_onlyIfValueChanged: 0
-  m_indexIfJustInteger: 0
+  m_indexIfJustInteger: 1
 --- !u!114 &426914837
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -593,9 +593,9 @@ MonoBehaviour:
   m_onIntegerPushed:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1003758169}
-        m_TargetAssemblyTypeName: UDPThreadSender, be.elab.udpthreadsender
-        m_MethodName: SendDirectlyToAllAsInteger
+      - m_Target: {fileID: 426914836}
+        m_TargetAssemblyTypeName: PushGenericMono_IndexIntegerRelay, be.elab.pushgenericintegerdate
+        m_MethodName: PushIn
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
