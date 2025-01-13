@@ -9,6 +9,18 @@ public class PushGenericMono_IndexIntegerRelay : MonoBehaviour
 
     public int m_indexIfJustInteger=0;
 
+    [ContextMenu("Push In Index Integer")]
+    public void PushIndexIntegerFromInspector()
+    {
+        PushIn(m_indexIfJustInteger, m_lastReceivedValue);
+    }
+    [ContextMenu("Push In Integer")]
+    public void PushIntegerFromInspector()
+    {
+        PushIn( m_lastReceivedValue);
+    }
+
+
     public void PushIn(int integer)
     {
 
