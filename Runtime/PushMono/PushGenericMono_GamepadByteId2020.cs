@@ -35,18 +35,24 @@ public class PushGenericMono_GamepadByteId2020 : MonoBehaviour
         m_elementId =(short) Mathf.Clamp(id,-20,20);
     }
 
-    public void SetLeftRightRotation(float percent) { 
+    public void SetDroneLeftRightRotation(float percent) { 
         m_joystickLeftHorizontal = Mathf.Clamp(percent, -1f, 1f);
     }
-    public void SetDownUp(float percent) { 
+    public void SetDroneDownUp(float percent) { 
         m_joystickLeftVertical = Mathf.Clamp(percent, -1f, 1f);
     }
-    public void SetLeftRight(float percent) { 
+    public void SetDroneLeftRight(float percent) { 
         m_joystickRightHorizontal = Mathf.Clamp(percent, -1f, 1f);
     }
-    public void SetBackwardForward(float percent) { 
+    public void SetDroneBackwardForward(float percent) { 
         m_joystickRightVertical = Mathf.Clamp(percent, -1f, 1f);
     }
+
+    public void SetLeftJoystickHorizontal(float percent) { m_joystickLeftHorizontal = Mathf.Clamp(percent, -1, 1); }
+    public void SetLeftJoystickVertical(float percent) { m_joystickLeftVertical = Mathf.Clamp(percent, -1, 1); }
+    public void SetRightJoystickHorizontal(float percent) { m_joystickRightHorizontal = Mathf.Clamp(percent, -1, 1); }
+    public void SetRightJoystickVertical(float percent) { m_joystickRightVertical = Mathf.Clamp(percent, -1, 1); }
+
 
     public void SetLeftJoystick(Vector2 joystick)
     {
