@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 public class Int1899Parser {
 
@@ -5,36 +6,36 @@ public class Int1899Parser {
 
     public static void SetPlayerId(byte playerId1To18, int valueIn, out int valueOut)
     {
-        RecoverValue999999(valueIn, out int value666666);
-        RecoverTag99(valueIn, out byte tag99);
+        GetValue999999(valueIn, out int value666666);
+        GetTag99(valueIn, out byte tag99);
         valueOut = playerId1To18 * 100000000 + tag99 * 1000000 + value666666;
     }
     public static void SetTag99(byte tag99, int valueIn, out int valueOut)
     {
-        RecoverValue999999(valueIn, out int value666666);
-        RecoverPlayerId(valueIn, out byte playerId1To18);
+        GetValue999999(valueIn, out int value666666);
+        GetPlayerId(valueIn, out byte playerId1To18);
         valueOut = playerId1To18 * 100000000 + tag99 * 1000000 + value666666;
     }
     public static void SetPlayerAndTag99(byte playerId1To18, byte tag99, int valueIn, out int valueOut)
     {
-        RecoverValue999999(valueIn, out int value666666);
+        GetValue999999(valueIn, out int value666666);
         valueOut = playerId1To18 * 100000000 + tag99 * 1000000 + value666666;
     }
 
-    public static void RecoverPlayerId(int value, out byte playerId1To18)
+    public static void GetPlayerId(int value, out byte playerId1To18)
     {
-        value = (value / 10000000);
+        value = (value / 100000000);
         if (value < 0)
             value = -value;
-        playerId1To18 = (byte)(value % 18);
+        playerId1To18 = (byte)(value % 20);
     }
-    static void RecoverTag99(int value, out byte tag99)
+    public static void GetTag99(int value, out byte tag99)
     {
         int tagPart = (value / 1000000) % 100;
         if (tagPart<0) tagPart = -tagPart;
         tag99 = (byte)tagPart;
     }
-    public static void RecoverValue999999(int value, out int value666666)
+    public static void GetValue999999(int value, out int value666666)
     {
         value666666 = value % 1000000;
     }
@@ -65,10 +66,20 @@ public class Int1899Parser {
         out int z1_999999,
         out int w1_999999)
     {
+        bool signX = quaternion.x < 0;
+        bool signY = quaternion.y < 0;
+        bool signZ = quaternion.z < 0;
+        bool signW = quaternion.w < 0;
+
         int x = (int)(quaternion.x * 100000f);
         int y = (int)(quaternion.y * 100000f);
         int z = (int)(quaternion.z * 100000f);
         int w = (int)(quaternion.w * 100000f);
+        if (x < 0) x = -x;
+        if (y < 0) y = -y;
+        if (z < 0) z = -z;
+        if (w < 0) w = -w;
+
 
         x1_999999 = playerId1To18 * 100000000 + 8000000 + x;
         y1_999999 = playerId1To18 * 100000000 + 9000000 + y;
@@ -109,10 +120,17 @@ public class Int1899Parser {
         in int z1_999_999, in int z2_999999,
         out Vector3 position)
     {
+        GetValue999999(x1_999_999, out int fx1_999_999);
+        GetValue999999(x2_999999, out int fx2_999999);
+        GetValue999999(y1_999_999, out int fy1_999_999);
+        GetValue999999(y2_999999, out int fy2_999999);
+        GetValue999999(z1_999_999, out int fz1_999_999);
+        GetValue999999(z2_999999, out int fz2_999999);
+
         position = new Vector3(
-            (x2_999999 + x1_999_999 * 1000000f) / 1000f,
-            (y2_999999 + y1_999_999 * 1000000f) / 1000f,
-            (z2_999999 + z1_999_999 * 1000000f) / 1000f
+            (fx1_999_999 + fx2_999999  * 1000000f) / 10000f,
+            (fy1_999_999 + fy2_999999  * 1000000f) / 10000f,
+            (fz1_999_999 + fz2_999999  * 1000000f) / 10000f
         );
     }
 
@@ -125,10 +143,11 @@ public class Int1899Parser {
         in byte playerId1To18,
         in byte type99P1,
         in byte type99P2,
-        in float value, out int part999_999, out int part999999) {
+        in float value, out int part999_999, out int part999999)
+    {
 
 
-        RoundFloatValue(value* 1000f, out double roundedValue);
+        RoundFloatValue(value * 10000f, out double roundedValue);
         double valueAsDouble = roundedValue;
         bool sign = valueAsDouble < 0;
 
@@ -144,17 +163,13 @@ public class Int1899Parser {
         else if (valueAsDouble <= 99999999999) { part999_999 = (part999_999 / 10000) * 10000; }
         else if (valueAsDouble <= 999999999999) { part999_999 = (part999_999 / 100000) * 100000; }
         else if (valueAsDouble <= 9999999999999) { part999_999 = (part999_999 / 1000000) * 1000000; }
+    
 
+        TagIntegerWithPlayerAndType(ref part999_999, playerId1To18, type99P1);
+        TagIntegerWithPlayerAndType(ref part999999, playerId1To18, type99P2);
 
-        part999_999 += playerId1To18 * 100000000 + type99P1 * 1000000;
-        part999999 += playerId1To18 * 100000000 + type99P2  * 1000000;
-
-        if (sign)
-        {
-            part999_999 = -part999_999;
-            part999999 = -part999999;
-        }
     }
+
     // Maps an angle in [0, 360) to an integer in [0, 99]
     public static int MapAngle0To360To0To99(float angle)
     {
@@ -165,6 +180,204 @@ public class Int1899Parser {
         return (int)(normalized / 360f * 100f);
     }
 
+    public static void ToIntJoystickAndTrigger999999(out int percent9, 
+        byte playerId1To16,
+        byte typeTag99,
+        float leftJoystickXPercent11,
+        float leftJoystickYPercent11,
+        float rightJoystickXPercent11,
+        float rightJoystickYPercent11,
+        float leftTrigger,
+        float rightTrigger)
+    {
+        int leftX9 = PercentFloatTo9(leftJoystickXPercent11);
+        int leftY9 = PercentFloatTo9(leftJoystickYPercent11);
+        int rightX9 = PercentFloatTo9(rightJoystickXPercent11);
+        int rightY9 = PercentFloatTo9(rightJoystickYPercent11);
+        int leftTrigger9 = PercentFloatTo9(leftTrigger);
+        int rightTrigger9 = PercentFloatTo9(rightTrigger);
+
+        percent9 = leftX9 * 100000
+                   + leftY9 * 10000
+                   + rightX9 * 1000
+                   + rightY9 * 100
+                   + leftTrigger9 * 10
+                   + rightTrigger9;
+
+        TagIntegerWithPlayerAndType(ref percent9, playerId1To16, typeTag99);
+
+
+    }
+    public static void ToIntFloatToPercent11To999999(
+        out int percent999999,
+        byte playerId1To16,
+        byte typeTag99,
+        float percentValue11)
+    {
+
+        int value = PercentFloatTo999999(percentValue11);
+        TagIntegerWithPlayerAndType(ref value, playerId1To16, typeTag99);
+        percent999999 = value;
+    }
+
+
+
+    private static int PercentFloatTo9(float percent11)
+    {
+        percent11 = Mathf.Clamp(percent11, -1f, 1f);
+        if (percent11 == 0f) return 0;
+        percent11 = (percent11 + 1f) / 2f; // Maps -1 to 0, 0 to 1, and 1 to 2
+        percent11 = Mathf.Clamp(percent11, 0f, 1f); // Ensure it's in [0, 1]
+        percent11 =1+ percent11 * 8f; // Scale to [1, 8]
+        if (percent11 < 1) percent11 = 1; // Ensure minimum value is 1
+        if (percent11 > 9) percent11 = 9; // Ensure maximum value is 9
+        return (int)Mathf.Round(percent11);
+    }
+
+    public static int PercentFloatTo999999(float percent11)
+    {
+        percent11 = Mathf.Clamp(percent11, -1f, 1f);
+        if (percent11 == 0f) return 0;
+        percent11 = (percent11 + 1f) / 2f; // Maps -1 to 0, 0 to 1, and 1 to 2
+        percent11 = Mathf.Clamp(percent11, 0f, 1f); // Ensure it's in [0, 1]
+        percent11 = percent11 * 999999f; // Scale to [1, 999999]
+        if (percent11 < 1) percent11 = 1; // Ensure minimum value is 1
+        if (percent11 > 999999) percent11 = 999999; // Ensure maximum value is 999999
+        return (int)Mathf.Round(percent11);
+    }
+
+    public static int PercentFloatTo999(float percent11)
+    {
+        percent11 = Mathf.Clamp(percent11, -1f, 1f);
+        if (percent11 == 0f) return 0;
+        percent11 = (percent11 + 1f) / 2f; // Maps -1 to 0, 0 to 1, and 1 to 2
+        percent11 = Mathf.Clamp(percent11, 0f, 1f); // Ensure it's in [0, 1]
+        percent11 = 1f + percent11 * 998f; // Scale to [1, 999]
+        if (percent11 < 1) percent11 = 1; // Ensure minimum value is 1
+        if (percent11 > 999) percent11 = 999; // Ensure maximum value is 999
+        return (int)Mathf.Round(percent11);
+    }
+
+  
+
+    public static void TagIntegerWithPlayerAndType(
+        ref int intToTag,
+        byte playerIdFrom0To20Max,
+        byte typeOfDataFrom0To99max)
+    {
+
+        bool negativeValue = intToTag < 0;
+        int value = intToTag % 1000000;
+        if (negativeValue)
+        {
+            value = -value;
+        }
+        int moduloPlayer = playerIdFrom0To20Max % 20;
+        int moduloTag = typeOfDataFrom0To99max % 100;
+        intToTag = moduloPlayer * 100000000 + moduloTag * 1000000 + value;
+        if (negativeValue)
+        {
+            intToTag = -intToTag;
+        }
+
+    }
+
+    public static void ToIntFloatToDoublePercent999(
+        out int buildInt999,
+        byte player1To16,
+        byte tag99,
+        float percentValue)
+    {
+        buildInt999 = PercentToInt999( percentValue);
+        TagIntegerWithPlayerAndType(ref buildInt999, player1To16, tag99);
+
+    }
+
+    public static int PercentToInt999( float percentValue)
+    {
+        if (percentValue == 0f) return 0; // Handle zero case directly
+
+        int buildInt999;
+        percentValue = Mathf.Clamp(percentValue, -1f, 1f); // Ensure it's in [-1, 1]
+        percentValue = (percentValue + 1f) / 2f; // Maps [-1, 1] to [0, 1]
+        percentValue = Mathf.Clamp(percentValue, 0f, 1f); // Ensure it's in [0, 1]
+        percentValue = 1f + percentValue * 998f; // Scale to [1, 999]
+        buildInt999 = (int)Mathf.Round(percentValue);
+        if (buildInt999 < 1) buildInt999 = 1; // Ensure minimum value is 1
+        if (buildInt999 > 999) buildInt999 = 999; // Ensure maximum value is 999
+        return buildInt999;
+    }
+
+    public static void ToIntFloatToDoublePercent999999(
+        out int buildInt999999,
+        byte player1To16,
+        byte tag99,
+        float percentLeftPart,
+        float percentRightPart)
+    {
+        int leftPart = PercentToInt999(percentLeftPart);
+        int rightPart = PercentToInt999(percentRightPart);
+        buildInt999999 = leftPart * 1000 + rightPart;
+        TagIntegerWithPlayerAndType(ref buildInt999999, player1To16, tag99);
+    }
+
+    internal static int ToIntScratchToWarcraftCommand(
+        byte player1To16,
+        byte tag99,
+        bool pressingAction,
+        EnumScratchToWarcraftGamepad action)
+    {
+        int value = (int)action;
+        if (pressingAction)
+        {
+            value += 1000; // Offset for pressing actions
+        }
+        TagIntegerWithPlayerAndType(ref value, player1To16, tag99);
+        return value;
+    }
+
+    public static void FromIntTranformEuler(in int intEulerValue, out Vector3 euler)
+    {
+        float x360 = (intEulerValue / 10000) % 100 /100f;
+        float y360 = (intEulerValue / 100) % 100 / 100f;
+        float z360 = intEulerValue % 100 / 100f;
+        euler = new Vector3(
+            x360 * 360f,
+            y360 * 360f,
+            z360 * 360f
+        );
+    }
+
+    public static void FromIntTranformQuaternion(
+        in int qX,
+        in int qY,
+        in int qZ,
+        in int qW,
+        out Quaternion rotation)
+    {
+        float x =Mathf.Abs((qX % 1000000) / 100000f);
+        float y =Mathf.Abs((qY % 1000000) / 100000f);
+        float z =Mathf.Abs((qZ % 1000000) / 100000f);
+        float w =Mathf.Abs((qW % 1000000) / 100000f);
+        if (qX < 0) x = -x;
+        if (qY < 0) y = -y;
+        if (qZ < 0) z = -z;
+        if (qW < 0) w = -w;
+        rotation = new Quaternion(x, y, z, w);
+    }
+
+    public static int ToIntScale(float scale)
+    {
+        return Mathf.RoundToInt(scale * 1000f);
+    }
+
+    public static float FromIntToScale(int scaleAsInt999999)
+    {
+        GetValue999999(scaleAsInt999999, out int scaleAsInt999999Part);
+        float scale = scaleAsInt999999Part / 1000f;
+        if (scale < 0) scale = -scale;
+        return scale;
+    }
 }
 public class Int1899Mono_PushTransform : MonoBehaviour
 {

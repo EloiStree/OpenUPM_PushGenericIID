@@ -6,7 +6,6 @@ public class TDD_Int1899Mono : MonoBehaviour {
 
     public byte playerId1To18 = 18; // Player ID from 1 to 18
     
-    
     byte m_type_01_x1 = 1;
     byte m_type_02_x2 = 2;
     byte m_type_03_y1 = 3;
@@ -18,16 +17,14 @@ public class TDD_Int1899Mono : MonoBehaviour {
     byte m_type_09_quaternionY = 9;
     byte m_type_10_quaternionZ = 10;
     byte m_type_11_quaternionW = 11;
-    byte m_type_12_gpsLongitude = 12;
-    byte m_type_13_gpsLatitude = 13;
 
-    byte m_type_20_joystick9Trigger = 20;
-    byte m_type_21_joystick999LeftXY = 21;
-    byte m_type_22_joystick999RightXY = 22;
-    byte m_type_23_joystick666LeftX = 23;
-    byte m_type_24_joystick666LeftY = 24;
-    byte m_type_25_joystick666RightX = 25;
-    byte m_type_26_joystick666RightY = 26;
+    byte m_type_20_setJoystick999999AxisAndTrigger = 20;
+    byte m_type_21_setJoystick999LeftXY = 21;
+    byte m_type_22_setJoystick999RightXY = 22;
+    byte m_type_23_setJoystick999999LeftX = 23;
+    byte m_type_24_setJoystick999999LeftY = 24;
+    byte m_type_25_setJoystick999999RightX = 25;
+    byte m_type_26_setJoystick999999RightY = 26;
 
     byte m_type_41_velocityLiftoffSpeedX = 41;
     byte m_type_42_velocityLiftoffSpeedY = 42;
