@@ -215,7 +215,19 @@ public class Int1899Parser {
         float percentValue11)
     {
 
-        int value = PercentFloatTo999999(percentValue11);
+        int value = PercentFloat11To999999(percentValue11);
+        TagIntegerWithPlayerAndType(ref value, playerId1To16, typeTag99);
+        percent999999 = value;
+    }
+
+    public static void ToIntFloatToPercent01To999999(
+       out int percent999999,
+       byte playerId1To16,
+       byte typeTag99,
+       float percentValue11)
+    {
+
+        int value = PercentFloat01To999999(percentValue11);
         TagIntegerWithPlayerAndType(ref value, playerId1To16, typeTag99);
         percent999999 = value;
     }
@@ -234,7 +246,7 @@ public class Int1899Parser {
         return (int)Mathf.Round(percent11);
     }
 
-    public static int PercentFloatTo999999(float percent11)
+    public static int PercentFloat11To999999(float percent11)
     {
         percent11 = Mathf.Clamp(percent11, -1f, 1f);
         if (percent11 == 0f) return 0;
@@ -244,6 +256,16 @@ public class Int1899Parser {
         if (percent11 < 1) percent11 = 1; // Ensure minimum value is 1
         if (percent11 > 999999) percent11 = 999999; // Ensure maximum value is 999999
         return (int)Mathf.Round(percent11);
+    }
+
+    public static int PercentFloat01To999999(float percent01)
+    {
+        percent01 = Mathf.Clamp(percent01, 0f, 1f);
+        if (percent01 == 0f) return 0;
+        percent01 = percent01 * 999999f; // Scale to [1, 999999]
+        if (percent01 < 1) percent01 = 1; // Ensure minimum value is 1
+        if (percent01 > 999999) percent01 = 999999; // Ensure maximum value is 999999
+        return (int)Mathf.Round(percent01);
     }
 
     public static int PercentFloatTo999(float percent11)
@@ -268,13 +290,32 @@ public class Int1899Parser {
 
         bool negativeValue = intToTag < 0;
         int value = intToTag % 1000000;
+
         if (negativeValue)
         {
             value = -value;
         }
-        int moduloPlayer = playerIdFrom0To20Max % 20;
-        int moduloTag = typeOfDataFrom0To99max % 100;
-        intToTag = moduloPlayer * 100000000 + moduloTag * 1000000 + value;
+
+
+        if (playerIdFrom0To20Max > 19)
+        {
+            playerIdFrom0To20Max = 19; // Clamp to max player ID
+        }
+        else if (playerIdFrom0To20Max < 0)
+        {
+            playerIdFrom0To20Max = 0; // Clamp to min player ID
+        }
+
+        if (typeOfDataFrom0To99max > 99)
+        {
+            typeOfDataFrom0To99max = 99; // Clamp to max tag
+        }
+        else if (typeOfDataFrom0To99max < 0)
+        {
+            typeOfDataFrom0To99max = 0; // Clamp to min tag
+        }
+;
+        intToTag = playerIdFrom0To20Max * 100000000 + typeOfDataFrom0To99max * 1000000 + value;
         if (negativeValue)
         {
             intToTag = -intToTag;
