@@ -7,9 +7,13 @@ namespace Eloi.Int1899 {
 
     public class Int1899Mono_PushOneDualStickAsInt : MonoBehaviour {
 
-    public STRUCT_16DualStick m_playerGamepad;
-    public UnityEvent<int> m_onIntChanged;
-    public bool m_useOnValidate = true;
+        public STRUCT_16DualStick m_playerGamepad;
+        [Range(0, 1)]
+        public float m_leftTriggerPercent01 = 0.0f;
+        [Range(0, 1)]
+        public float m_rightTriggerPercent01 = 0.0f;
+        public UnityEvent<int> m_onIntChanged;
+        public bool m_useOnValidate = true;
 
 
     private void OnValidate()
@@ -45,16 +49,16 @@ namespace Eloi.Int1899 {
     public byte m_type_setJoystick999999LeftY = 24;
     public byte m_type_setJoystick999999RightX = 25;
     public byte m_type_setJoystick999999RightY = 26;
-    public byte m_type_setJoystick999999Left = 27;
-    public byte m_type_setJoystick999999Right = 28;
+    public byte m_type_setTrigger999999Left = 27;
+    public byte m_type_setTrigger999999Right = 28;
 
     [Header("VALUE 999999")]
     public int m_value_setJoystick999999LeftX = 0;
     public int m_value_setJoystick999999LeftY = 0;
     public int m_value_setJoystick999999RightX = 0;
     public int m_value_setJoystick999999RightY = 0;
-    public int m_value_setJoystick999999Left = 0;
-    public int m_value_setJoystick999999Right = 0;
+    public int m_value_setTrigger999999Left = 0;
+    public int m_value_setTrigger999999Right = 0;
 
 
     [ContextMenu("Tap Gamepad B")]
@@ -74,14 +78,31 @@ namespace Eloi.Int1899 {
 
     [ContextMenu("Tap Gamepad Right Side Button")]
     public void TapGamepadRightSideButton() => TapScratchToWarcraftKey(EnumScratchToWarcraftGamepad.PressRightSideButton);
-    public void TapGamepadLeftStick() => TapScratchToWarcraftKey(EnumScratchToWarcraftGamepad.PressLeftStick);
-    public void TapGamepadRightStick() => TapScratchToWarcraftKey(EnumScratchToWarcraftGamepad.PressRightStick);
-    public void TapGamepadMenuRight() => TapScratchToWarcraftKey(EnumScratchToWarcraftGamepad.PressMenuRight);
-    public void TapGamepadMenuLeft() => TapScratchToWarcraftKey(EnumScratchToWarcraftGamepad.PressMenuLeft);
-    public void TapGamepadArrowNorth() => TapScratchToWarcraftKey(EnumScratchToWarcraftGamepad.PressArrowNorth);
-    public void TapGamepadArrowEast() => TapScratchToWarcraftKey(EnumScratchToWarcraftGamepad.PressArrowEast);
-    public void TapGamepadArrowSouth() => TapScratchToWarcraftKey(EnumScratchToWarcraftGamepad.PressArrowSouth);
-    public void TapGamepadArrowWest() => TapScratchToWarcraftKey(EnumScratchToWarcraftGamepad.PressArrowWest);
+
+        [ContextMenu("Tap Gamepad Left Stick")]
+        public void TapGamepadLeftStick() => TapScratchToWarcraftKey(EnumScratchToWarcraftGamepad.PressLeftStick);
+
+        [ContextMenu("Tap Gamepad Right Stick")]
+        public void TapGamepadRightStick() => TapScratchToWarcraftKey(EnumScratchToWarcraftGamepad.PressRightStick);
+
+        [ContextMenu("Tap Gamepad Menu Right")]
+        public void TapGamepadMenuRight() => TapScratchToWarcraftKey(EnumScratchToWarcraftGamepad.PressMenuRight);
+
+        [ContextMenu("Tap Gamepad Menu Left")]
+        public void TapGamepadMenuLeft() => TapScratchToWarcraftKey(EnumScratchToWarcraftGamepad.PressMenuLeft);
+
+        [ContextMenu("Tap Arrow North")]
+        public void TapGamepadArrowNorth() => TapScratchToWarcraftKey(EnumScratchToWarcraftGamepad.PressArrowNorth);
+
+        [ContextMenu("Tap Arrow East")]
+
+        public void TapGamepadArrowEast() => TapScratchToWarcraftKey(EnumScratchToWarcraftGamepad.PressArrowEast);
+
+        [ContextMenu("Tap Arrow South")]
+        public void TapGamepadArrowSouth() => TapScratchToWarcraftKey(EnumScratchToWarcraftGamepad.PressArrowSouth);
+
+        [ContextMenu("Tap Arrow West")]
+        public void TapGamepadArrowWest() => TapScratchToWarcraftKey(EnumScratchToWarcraftGamepad.PressArrowWest);
 
 
 
@@ -94,10 +115,12 @@ namespace Eloi.Int1899 {
         StartCoroutine(Coroutine_TapScratchToWarcraftKey((int)action));
 
     }
-    public IEnumerator Coroutine_TapScratchToWarcraftKey(int commandKeyPress)
+
+        public float m_timeBetweenPresses = 2; 
+        public IEnumerator Coroutine_TapScratchToWarcraftKey(int commandKeyPress)
     {
         PushScratchToWarcraftCommand999999(commandKeyPress);
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(m_timeBetweenPresses);
         PushScratchToWarcraftCommand999999(commandKeyPress+1000); 
     }
     public void PushScratchToWarcraftCommand999999(int value) {
@@ -131,13 +154,33 @@ namespace Eloi.Int1899 {
 
     [ContextMenu("Refresh And Push")]
     public void RefreshAndPush()
-    {
-        PushAsSingleInt();
-        PushAsDoubleIntegerIfChanged();
-        PushAsFourIntegerIfChanged();
-    }
+        {
+            PushAsSingleInt();
+            PushAsDoubleIntegerIfChanged();
+            PushAsFourIntegerIfChanged();
 
-    private void PushAsSingleInt()
+            PushAsTriggerIfChanged();
+        }
+
+        private void PushAsTriggerIfChanged()
+        {
+            Int1899Parser.ToIntFloatToPercent01To999999(
+                 out int leftTrigger999999,
+                    m_playerGamepad.m_playerId1To16,
+                    m_type_setTrigger999999Left,
+                    m_leftTriggerPercent01
+                    );
+            PushIfChangeAndStore(ref m_value_setTrigger999999Left, leftTrigger999999);
+            Int1899Parser.ToIntFloatToPercent01To999999(
+                out int rightTrigger999999,
+                m_playerGamepad.m_playerId1To16,
+                m_type_setTrigger999999Right,
+                m_rightTriggerPercent01
+            );
+            PushIfChangeAndStore(ref m_value_setTrigger999999Right, rightTrigger999999);
+        }
+
+        private void PushAsSingleInt()
     {
         if (!m_useCompressAxisAndTrigger)
             return;

@@ -318,6 +318,7 @@ MonoBehaviour:
       m_type_09_quaternionY: 9
       m_type_10_quaternionZ: 10
       m_type_11_quaternionW: 11
+      m_type_12_scale: 12
     m_lastPushedOfInteger:
       m_value_01_x1_999_999: -101000067
       m_value_02_x2_999999: -102000000
@@ -330,6 +331,7 @@ MonoBehaviour:
       m_value_09_quaternionY_999999: -109041809
       m_value_10_quaternionZ_999999: 110017644
       m_value_11_quaternionW_999999: -111082425
+      m_value_12_scale_999999: 0
   m_useUpdate: 1
 --- !u!1 &710343048
 GameObject:
@@ -377,12 +379,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerId1To18: 11
   m_positionToInt: {x: -0.11, y: -2.42, z: -0.61}
-  x1_999_999: -1801000110
-  x2_999999: -1802000000
-  y1_999_999: -1803002420
-  y2_999999: -1804000000
-  z1_999_999: -1805000610
-  z2_999999: -1806000000
+  x1_999_999: 1801001100
+  x2_999999: 1802000000
+  y1_999_999: 1803024200
+  y2_999999: 1804000000
+  z1_999_999: 1805006100
+  z2_999999: 1806000000
   m_euler: {x: 427, y: -2.03, z: 0}
   m_eulerCompressedToInt: 1107189900
   m_rotation: {x: -5.63, y: -2.2, z: -0.09, w: 0.9965655}
@@ -393,7 +395,7 @@ MonoBehaviour:
   m_gps: {x: 368.9, y: 231.4}
   m_gpsLongitude: 1112368899
   m_gpsLatitude: 1113231399
-  m_positionFromInt: {x: -0.11, y: -2.42, z: -0.61}
+  m_positionFromInt: {x: 0.11, y: 2.42, z: 0.61}
   m_eulerFromtInt: {x: 0, y: 0, z: 0}
 --- !u!1 &849406867
 GameObject:
@@ -537,12 +539,14 @@ MonoBehaviour:
   m_targetRegistered:
   - m_ip: 192.168.1.111
     m_port: 3615
+  - m_ip: 127.0.0.1
+    m_port: 3615
   m_singleAlias: []
   m_groupAlias: []
   m_lastSent: 
   m_lastException: 
   m_maxByteDebugSize: 20
-  m_lastBytesSend: 
+  m_lastBytesSend: dd54ef1e
 --- !u!4 &943054385
 Transform:
   m_ObjectHideFlags: 0
@@ -770,12 +774,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_playerGamepad:
-    m_playerId1To16: 1
+    m_playerId1To16: 5
     m_dualStick:
-      m_leftJoystickXPercent11: 0
+      m_leftJoystickXPercent11: -0.022
       m_leftJoystickYPercent11: 0
       m_rightJoystickXPercent11: 0
       m_rightJoystickYPercent11: 0
+  m_leftTriggerPercent01: 0.504
+  m_rightTriggerPercent01: 0
   m_onIntChanged:
     m_PersistentCalls:
       m_Calls:
@@ -790,10 +796,10 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 2
+        m_CallState: 1
   m_useOnValidate: 1
   m_type_scratchToWarcraftCommand: 19
-  m_lastScratchToWarcraftCommand: 0
+  m_lastScratchToWarcraftCommand: 519001309
   m_useCompressAxisAndTrigger: 0
   m_type_setJoystick999999AxisAndTrigger: 20
   m_value_setJoystick999999AxisAndTrigger: 120000000
@@ -807,14 +813,15 @@ MonoBehaviour:
   m_type_setJoystick999999LeftY: 24
   m_type_setJoystick999999RightX: 25
   m_type_setJoystick999999RightY: 26
-  m_type_setJoystick999999Left: 27
-  m_type_setJoystick999999Right: 28
-  m_value_setJoystick999999LeftX: 123000000
-  m_value_setJoystick999999LeftY: 124000000
-  m_value_setJoystick999999RightX: 125000000
-  m_value_setJoystick999999RightY: 126000000
-  m_value_setJoystick999999Left: 0
-  m_value_setJoystick999999Right: 0
+  m_type_setTrigger999999Left: 27
+  m_type_setTrigger999999Right: 28
+  m_value_setJoystick999999LeftX: 523489000
+  m_value_setJoystick999999LeftY: 524000000
+  m_value_setJoystick999999RightX: 525000000
+  m_value_setJoystick999999RightY: 526000000
+  m_value_setTrigger999999Left: 527504000
+  m_value_setTrigger999999Right: 528000000
+  m_timeBetweenPresses: 2
 --- !u!4 &1506827613
 Transform:
   m_ObjectHideFlags: 0
